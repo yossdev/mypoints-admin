@@ -1,6 +1,6 @@
 import React from 'react'
 import pageImage from "../assets/first-image.png"
-import logo from '../assets/logo.svg'
+import logo from '../logo.svg'
 export default function Login() {
     return (
       <div class="w-full flex flex-wrap">
