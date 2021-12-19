@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 export default function NotFound() {
     const navigate=useNavigate()
-    const handleHome=()=>{
+    const handleButtonHome=()=>{
         navigate("/")
     }
     return (
@@ -14,7 +14,7 @@ export default function NotFound() {
                         <h1 class="text-6xl font-medium py-8">oops! Page not found</h1>
                         <p class="text-2xl pb-8 px-12 font-medium">Oops! The page you are looking for does not exist.</p>
                             <button class="bg-gradient-to-r from-purple-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white font-semibold px-6 py-3 rounded-md mr-6" 
-                            onClick={handleHome}>
+                            onClick={handlebuttonHome}>
                             HOME
                             </button>
                     </div>
