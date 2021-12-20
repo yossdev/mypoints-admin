@@ -1,12 +1,30 @@
-import logo from './logo.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import Homepage from './components/pages/Homepage'
+import Login from './components/pages/Login'
+import Register from './components/pages/Register'
+import Dashboard from './components/pages/Dashboard'
+import Agents from './components/pages/Agents'
+import Product from './components/pages/Product'
+import Reward from './components/pages/Reward'
+import History from './components/pages/History'
+import NotFound from './components/pages/NotFound'
 
 function App() {
   return (
-    <div>
-      <img src={logo} alt="logo" className="bg-violet-600" />
-      <h1 className="text-3xl font-bold underline">MyPoints Admin</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage />}></Route>
+        <Route path="login" element={<Login />}></Route>
+        <Route path="register" element={<Register />}></Route>
+        <Route path="dashboard" element={<Dashboard />}></Route>
+        <Route path="agents" element={<Agents />}></Route>
+        <Route path="product" element={<Product />}></Route>
+        <Route path="reward" element={<Reward />}></Route>
+        <Route path="history" element={<History />}></Route>
+        <Route path="*" element={<NotFound />}></Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
