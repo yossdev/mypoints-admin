@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 export default function NotFound() {
     const navigate=useNavigate()
     const handleButtonHome=()=>{
-        navigate("/")
+        navigate("dashboard")
     }
     return (
         <div class="bg-gradient-to-r from-purple-300 to-blue-200">
