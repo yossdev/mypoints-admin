@@ -62,6 +62,7 @@ const Register = () => {
           <img
             src={pageImage}
             class="object-cover w-full h-screen hidden md:block"
+            alt="pageImage"
           />
         </div>
       </div>
