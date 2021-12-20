@@ -20,8 +20,8 @@ function App() {
           <Route path="product" element={<Product/>}></Route>
           <Route path="reward" element={<Reward/>}></Route>
           <Route path="history" element={<History/>}></Route>
-
           <Route path="*" element={<NotFound/>}></Route>
+          
       </Routes>
     </BrowserRouter>
    
