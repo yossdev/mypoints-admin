@@ -1,9 +1,11 @@
-import React from 'react'
+const Product = () => {
+  document.title = 'Product'
 
-export default function Product() {
-    return (
-        <div>
-            <h1>ini product!</h1>
-        </div>
-    )
+  return (
+    <div>
+      <h1>ini product!</h1>
+    </div>
+  )
 }
+
+export default Product

@@ -1,9 +1,10 @@
-import React from 'react'
-
-export default function History() {
-    return (
-        <div>
-            <h1>ini history!</h1>
-        </div>
-    )
+const History = () => {
+  document.title = 'History'
+  return (
+    <div>
+      <h1>ini history !</h1>
+    </div>
+  )
 }
+
+export default History

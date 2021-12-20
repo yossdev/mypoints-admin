@@ -1,9 +1,11 @@
-import React from 'react'
+const Reward = () => {
+  document.title = 'Reward'
 
-export default function Reward() {
-    return (
-        <div>
-            <h1>ini reward!</h1>
-        </div>
-    )
+  return (
+    <div>
+      <h1>ini reward!</h1>
+    </div>
+  )
 }
+
+export default Reward
