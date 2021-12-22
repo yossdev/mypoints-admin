@@ -10,6 +10,7 @@ import Reward from './components/pages/Reward'
 import History from './components/pages/History'
 import NotFound from './components/pages/NotFound'
 import Profile from './components/pages/Profile'
+import PageError from './components/pages/PageError'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="reward" element={<Reward />}></Route>
         <Route path="history" element={<History />}></Route>
         <Route path="profile" element={<Profile />}></Route>
+        <Route path="error" element={<PageError />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </BrowserRouter>
