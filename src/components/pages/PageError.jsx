@@ -1,6 +1,14 @@
 import RepairImage from '../assets/img/repair.png'
+import { useNavigate } from 'react-router-dom'
 
 const PageError = () => {
+  document.title = 'Page Error'
+
+  const navigate = useNavigate()
+  const handleOK = () => {
+    navigate('/', { replace: true })
+  }
+
   return (
     <div class="flex items-center justify-center w-screen h-screen">
       <div class="px-4 lg:py-12">
@@ -17,6 +25,7 @@ const PageError = () => {
             <a
               href="#"
               class="px-6 py-2 text-sm font-semibold text-blue-800 bg-blue-100"
+              onClick={handleOK}
             >
               OK
             </a>
