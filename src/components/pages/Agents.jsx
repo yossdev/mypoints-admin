@@ -10,12 +10,8 @@ const Agents = () => {
     <>
       <SideBar />
       <AdminMenu />
-      <div class=" absolute mt-32">
-        <div class="absolute top-0 right-20 h-72 w-72 ">
-          <ButtonAddAgents />
-        </div>
-        <CardAgents />
-      </div>
+      <CardAgents />
+      <ButtonAddAgents />
     </>
   )
 }
