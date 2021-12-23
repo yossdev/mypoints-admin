@@ -1,10 +1,14 @@
+import SideBar from '../UI/organisms/SideBar'
+import AdminMenu from '../UI/molecules/AdminMenu'
+
 const Product = () => {
   document.title = 'Product'
 
   return (
-    <div>
-      <h1>ini product!</h1>
-    </div>
+    <>
+      <SideBar />
+      <AdminMenu />
+    </>
   )
 }
 

@@ -1,9 +1,13 @@
+import SideBar from '../UI/organisms/SideBar'
+import AdminMenu from '../UI/molecules/AdminMenu'
+
 const History = () => {
   document.title = 'History'
   return (
-    <div>
-      <h1>ini history !</h1>
-    </div>
+    <>
+      <SideBar />
+      <AdminMenu />
+    </>
   )
 }
 

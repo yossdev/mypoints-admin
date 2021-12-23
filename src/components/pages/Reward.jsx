@@ -1,10 +1,14 @@
+import SideBar from '../UI/organisms/SideBar'
+import AdminMenu from '../UI/molecules/AdminMenu'
+
 const Reward = () => {
   document.title = 'Reward'
 
   return (
-    <div>
-      <h1>ini reward!</h1>
-    </div>
+    <>
+      <SideBar />
+      <AdminMenu />
+    </>
   )
 }
 

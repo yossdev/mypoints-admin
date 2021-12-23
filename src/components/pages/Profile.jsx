@@ -1,9 +1,13 @@
+import SideBar from '../UI/organisms/SideBar'
+import AdminMenu from '../UI/molecules/AdminMenu'
+
 const Profile = () => {
   document.title = 'Profile'
   return (
-    <div>
-      <h1>ini Profile !</h1>
-    </div>
+    <>
+      <SideBar />
+      <AdminMenu />
+    </>
   )
 }
 export default Profile

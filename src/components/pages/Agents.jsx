@@ -1,9 +1,18 @@
+import SideBar from '../UI/organisms/SideBar'
+import AdminMenu from '../UI/molecules/AdminMenu'
+import CardAgents from '../UI/organisms/CardAgents'
+import ButtonAddAgents from '../UI/atoms/ButtonAddAgents'
+
 const Agents = () => {
   document.title = 'Agents'
+
   return (
-    <div>
-      <h1>ini agents!</h1>
-    </div>
+    <>
+      <SideBar />
+      <AdminMenu />
+      <CardAgents />
+      <ButtonAddAgents />
+    </>
   )
 }
 

@@ -58,15 +58,16 @@ const SideBar = () => {
               onClick={() => setReward(!reward)}
               className="flex w-full justify-between text-white hover:bg-[#391553] rounded-md cursor-pointer pl-4 pr-10 pt-2 pb-2 mb-2"
             >
-              <Link to="/reward">
-                <div className="flex items-center">
-                  <GiftIcon size={20} />
+              <div className="flex items-center">
+                <GiftIcon size={20} />
 
-                  <span className="text-md ml-2 mr-14">Reward</span>
+                <span className="text-md ml-2 mr-14">Rewards</span>
 
-                  <ChevronDownIcon size={20} />
-                </div>
-              </Link>
+                <ChevronDownIcon
+                  size={20}
+                  class="group-hover:-rotate-18 transition duration-150 ease-in-out"
+                />
+              </div>
             </li>
 
             {reward ? (
