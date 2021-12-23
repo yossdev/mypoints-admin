@@ -1,9 +1,13 @@
+import AdminMenu from '../UI/molecules/AdminMenu'
+import SideBar from '../UI/organisms/SideBar'
+
 const Dashboard = () => {
   document.title = 'Dashboard'
   return (
-    <div>
-      <h1>ini dashboard !</h1>
-    </div>
+    <>
+      <SideBar />
+      <AdminMenu />
+    </>
   )
 }
 
