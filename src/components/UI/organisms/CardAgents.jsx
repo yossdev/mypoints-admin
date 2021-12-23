@@ -20,7 +20,7 @@ const CardAgents = () => {
               Mohammad Wawan
             </h5>
           </a>
-          {/* poin agent */}
+          {/* photo agent */}
           <p class="font-normal text-gray-700 mb-3 dark:text-gray-400">
             point : 100
           </p>

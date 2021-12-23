@@ -25,7 +25,6 @@ function App() {
         <Route path="reward" element={<Reward />}></Route>
         <Route path="history" element={<History />}></Route>
         <Route path="profile" element={<Profile />}></Route>
-        <Route path="error" element={<PageError />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </BrowserRouter>
