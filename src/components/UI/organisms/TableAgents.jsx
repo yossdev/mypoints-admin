@@ -15,10 +15,14 @@ const TableAgents = () => {
             </tr>
             <tr class="border-b hover:bg-orange-100 bg-gray-100">
               <td class="p-3 px-5">
-                <input type="text" value="user.name" class="bg-transparent" />
+                <input type="text" value="agents.name" class="bg-transparent" />
               </td>
               <td class="p-3 px-5">
-                <input type="text" value="user.email" class="bg-transparent" />
+                <input
+                  type="text"
+                  value="agents.email"
+                  class="bg-transparent"
+                />
               </td>
               <td class="p-3 px-5">
                 <p>1000</p>
