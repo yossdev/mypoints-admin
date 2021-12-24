@@ -1,7 +1,7 @@
 import SideBar from '../UI/organisms/SideBar'
 import AdminMenu from '../UI/molecules/AdminMenu'
-import CardAgents from '../UI/organisms/CardAgents'
 import ButtonAddAgents from '../UI/atoms/ButtonAddAgents'
+import TableAgents from '../UI/organisms/TableAgents'
 
 const Agents = () => {
   document.title = 'Agents'
@@ -10,7 +10,7 @@ const Agents = () => {
     <>
       <SideBar />
       <AdminMenu />
-      <CardAgents />
+      <TableAgents />
       <ButtonAddAgents />
     </>
   )
