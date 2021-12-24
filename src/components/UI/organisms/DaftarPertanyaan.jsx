@@ -12,7 +12,7 @@ const DaftarPertanyaan = () => {
   return (
     <>
       <div className="mx-auto mt-36 pb-2 w-fit h-12 border-b-2 border-purple">
-        <h1 className="text-center text-2xl font-bold leading-tight text-purple font-poppins">
+        <h1 className="text-center text-2xl font-bold leading-tight text-purple font-Poppins">
           Frequently Asked Questions
         </h1>
       </div>
@@ -27,7 +27,7 @@ const DaftarPertanyaan = () => {
               >
                 <div className="flex-shrink-0"></div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-roboto text-purple">Apa itu MyPoints?</p>
+                  <p className="font-Roboto text-purple">Apa itu MyPoints?</p>
                 </div>
                 <ChevronDownIcon
                   size={20}
@@ -36,7 +36,7 @@ const DaftarPertanyaan = () => {
                 />
               </div>
               {jawab1 ? (
-                <p className="ml-4 mt-4 font-roboto font-light text-sm">
+                <p className="ml-4 mt-4 font-Roboto font-light text-sm">
                   MyPoints adalah website aplikasi yang digunakan perusahaan
                   retail yang menjual berbagai produk. Setiap penjualan produk,
                   agen yang terdaftar bisa mendapatkan poin sesuai produk yang
@@ -53,7 +53,7 @@ const DaftarPertanyaan = () => {
               >
                 <div className="flex-shrink-0"></div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-roboto text-purple">
+                  <p className="font-Roboto text-purple">
                     Apakah harus menjadi agen untuk mendapatkan MyPoints?
                   </p>
                 </div>
@@ -64,7 +64,7 @@ const DaftarPertanyaan = () => {
                 />
               </div>
               {jawab2 ? (
-                <p className="ml-4 mt-4 font-roboto font-light text-sm">
+                <p className="ml-4 mt-4 font-Roboto font-light text-sm">
                   Yes! Untuk menjadi agen, Anda harus didaftarkan oleh
                   masing-masing Admin retail. Setelah itu Anda bisa memulai
                   untuk mendapatkan MyPoints.
@@ -79,7 +79,7 @@ const DaftarPertanyaan = () => {
               >
                 <div className="flex-shrink-0"></div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-roboto text-purple">
+                  <p className="font-Roboto text-purple">
                     Berapa rupiah konversi 1 MyPoints?
                   </p>
                 </div>
@@ -90,7 +90,7 @@ const DaftarPertanyaan = () => {
                 />
               </div>
               {jawab3 ? (
-                <p className="ml-4 mt-4 font-roboto font-light text-sm">
+                <p className="ml-4 mt-4 font-Roboto font-light text-sm">
                   1 MyPoints senilai 100 Rupiah.
                 </p>
               ) : null}
@@ -103,7 +103,7 @@ const DaftarPertanyaan = () => {
               >
                 <div className="flex-shrink-0"></div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-roboto text-purple">
+                  <p className="font-Roboto text-purple">
                     Bagaimana caranya mendapatkan MyPoints?
                   </p>
                 </div>
@@ -114,7 +114,7 @@ const DaftarPertanyaan = () => {
                 />
               </div>
               {jawab4 ? (
-                <p className="ml-4 mt-4 font-roboto font-light text-sm">
+                <p className="ml-4 mt-4 font-Roboto font-light text-sm">
                   Jual salah satu produk yang ada, kemudian nantinya kamu akan
                   mendapatkan saldo MyPoints. Setelah itu, kamu bisa menukarkan
                   saldo MyPoints-mu dengan hadiah tertentu.
@@ -129,7 +129,7 @@ const DaftarPertanyaan = () => {
               >
                 <div className="flex-shrink-0"></div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-roboto text-purple">
+                  <p className="font-Roboto text-purple">
                     Berapa banyak MyPoints yang bisa didapatkan dari setiap
                     transaksi?
                   </p>
@@ -141,7 +141,7 @@ const DaftarPertanyaan = () => {
                 />
               </div>
               {jawab5 ? (
-                <p className="ml-4 mt-4 font-roboto font-light text-sm">
+                <p className="ml-4 mt-4 font-Roboto font-light text-sm">
                   Jumlah MyPoints untuk setiap produk berbeda. Anda dapat
                   memeriksa jumlah Poin yang akan Anda peroleh dari setiap
                   produk.
@@ -156,7 +156,7 @@ const DaftarPertanyaan = () => {
               >
                 <div className="flex-shrink-0"></div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-roboto text-purple">
+                  <p className="font-Roboto text-purple">
                     MyPoints bisa digunakan untuk apa saja?
                   </p>
                 </div>
@@ -167,7 +167,7 @@ const DaftarPertanyaan = () => {
                 />
               </div>
               {jawab6 ? (
-                <p className="ml-4 mt-4 font-roboto font-light text-sm">
+                <p className="ml-4 mt-4 font-Roboto font-light text-sm">
                   Anda dapat menggunakan MyPoints untuk redeem / penukaran
                   dengan hadiah menarik tertentu sesuai keinginan.
                 </p>

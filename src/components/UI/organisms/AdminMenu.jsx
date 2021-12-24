@@ -12,7 +12,7 @@ const UserMenu = () => {
 
   return (
     <>
-      <div className="float-right mr-10 mt-4 font-roboto-300">
+      <div className="float-right mr-10 mt-4 font-Roboto-300">
         <div
           onClick={() => setMenu(!menu)}
           className="flex ml-10 cursor-pointer items-center"

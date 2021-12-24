@@ -17,7 +17,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="absolute h-full bg-purple shadow flex-col justify-between sm:flex font-roboto">
+      <div className="absolute h-full bg-purple shadow flex-col justify-between sm:flex font-Roboto">
         <div className="pl-5 pr-5">
           <div className="h-16 w-full pl-2 flex items-center">
             <img alt="logo white" src={logo} width={175} />
