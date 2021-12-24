@@ -1,5 +1,5 @@
 import SideBar from '../UI/organisms/SideBar'
-import AdminMenu from '../UI/molecules/AdminMenu'
+import AdminMenu from '../UI/organisms/AdminMenu'
 
 const Product = () => {
   document.title = 'Product'

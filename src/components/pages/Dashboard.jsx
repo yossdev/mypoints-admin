@@ -1,4 +1,4 @@
-import AdminMenu from '../UI/molecules/AdminMenu'
+import AdminMenu from '../UI/organisms/AdminMenu'
 import SideBar from '../UI/organisms/SideBar'
 
 const Dashboard = () => {

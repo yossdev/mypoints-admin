@@ -1,5 +1,5 @@
 import SideBar from '../UI/organisms/SideBar'
-import AdminMenu from '../UI/molecules/AdminMenu'
+import AdminMenu from '../UI/organisms/AdminMenu'
 import ButtonAddAgents from '../UI/atoms/ButtonAddAgents'
 import TableAgents from '../UI/organisms/TableAgents'
 
