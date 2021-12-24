@@ -2,6 +2,7 @@ import logo from '../atoms/logo.svg'
 import ButtonLogin from '../atoms/Button'
 
 import { NavLink } from 'react-router-dom'
+import ButtonRegister from '../atoms/ButtonRegister'
 
 const Header = () => {
   return (
@@ -12,6 +13,9 @@ const Header = () => {
         <div className="lg:flex lg:items-stretch lg:justify-end ml-auto">
           <NavLink to="/login">
             <ButtonLogin />
+          </NavLink>
+          <NavLink to="/register">
+            <ButtonRegister />
           </NavLink>
         </div>
       </div>
