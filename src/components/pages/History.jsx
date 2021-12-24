@@ -1,6 +1,8 @@
 import SideBar from '../UI/organisms/SideBar'
 import AdminMenu from '../UI/organisms/AdminMenu'
 
+import { HourglassIcon } from '@primer/octicons-react'
+
 const History = () => {
   document.title = 'History'
   return (
@@ -8,8 +10,8 @@ const History = () => {
       <SideBar />
       <AdminMenu />
 
-      <div className="ml-80 pt-3 font-roboto">
-        <HomeIcon size={16} fill="darkgrey" />
+      <div className="ml-80 pt-3 font-Roboto">
+        <HourglassIcon size={16} fill="darkgrey" />
         <span className="text-sm ml-2 text-darkgrey">/ History</span> <br />
         <span className="text-md text-darkgrey font-bold">History</span>
       </div>

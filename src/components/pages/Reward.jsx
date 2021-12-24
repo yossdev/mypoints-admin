@@ -1,6 +1,7 @@
 import SideBar from '../UI/organisms/SideBar'
 import AdminMenu from '../UI/organisms/AdminMenu'
 
+import { GiftIcon } from '@primer/octicons-react'
 const Reward = () => {
   document.title = 'Reward'
 
@@ -9,8 +10,8 @@ const Reward = () => {
       <SideBar />
       <AdminMenu />
 
-      <div className="ml-80 pt-3 font-roboto">
-        <HomeIcon size={16} fill="darkgrey" />
+      <div className="ml-80 pt-3 font-Roboto">
+        <GiftIcon size={16} fill="darkgrey" />
         <span className="text-sm ml-2 text-darkgrey">/ Reward</span> <br />
         <span className="text-md text-darkgrey font-bold">Reward</span>
       </div>
