@@ -1,72 +1,69 @@
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
+
 import {
+  PersonIcon,
   HourglassIcon,
   TagIcon,
   GiftIcon,
   HomeIcon,
   ChevronDownIcon,
-  PersonIcon,
 } from '@primer/octicons-react'
-import Logo from '../atoms/logo-white.svg'
-import { Link } from 'react-router-dom'
 
-const SideBar = () => {
+import logo from '../atoms/logo-white.svg'
+
+const Sidebar = () => {
   const [reward, setReward] = useState(false)
 
   return (
     <>
-      <div className="absolute h-full bg-[#5F2788] shadow flex-col justify-between sm:flex">
+      <div className="absolute h-full bg-purple shadow flex-col justify-between sm:flex font-Roboto">
         <div className="pl-5 pr-5">
-          <Link to="/dashboard">
-            <div className="h-16 w-full pl-2 flex items-center">
-              <img alt="logo white" src={Logo} width={175} />
-            </div>
-          </Link>
+          <div className="h-16 w-full pl-2 flex items-center">
+            <img alt="logo white" src={logo} width={175} />
+          </div>
 
           <ul className="mt-5">
-            <li className="flex w-full justify-between text-white hover:bg-[#391553] rounded-md cursor-pointer pl-4 pr-10 pt-2 pb-2 mb-2">
-              <Link to="/dashboard">
+            <NavLink to="/dashboard">
+              <li className="flex w-full justify-between text-white hover:bg-darkpurple rounded-md cursor-pointer pl-4 pr-10 pt-2 pb-2 mb-2">
                 <div className="flex items-center">
                   <HomeIcon size={20} />
 
                   <span className="text-md ml-2">Dashboard</span>
                 </div>
-              </Link>
-            </li>
+              </li>
+            </NavLink>
 
-            <li className="flex w-full justify-between text-white hover:bg-[#391553] rounded-md cursor-pointer pl-4 pr-10 pt-2 pb-2 mb-2">
-              <Link to="/agents">
+            <NavLink to="/agents">
+              <li className="flex w-full justify-between text-white hover:bg-darkpurple rounded-md cursor-pointer pl-4 pr-10 pt-2 pb-2 mb-2">
                 <div className="flex items-center">
                   <PersonIcon size={20} />
 
                   <span className="text-md  ml-2">Agents</span>
                 </div>
-              </Link>
-            </li>
+              </li>
+            </NavLink>
 
-            <li className="flex w-full justify-between text-white hover:bg-[#391553] rounded-md cursor-pointer pl-4 pr-10 pt-2 pb-2 mb-2">
-              <Link to="/product">
+            <NavLink to="/product">
+              <li className="flex w-full justify-between text-white hover:bg-darkpurple rounded-md cursor-pointer pl-4 pr-10 pt-2 pb-2 mb-2">
                 <div className="flex items-center">
                   <TagIcon size={20} />
 
                   <span className="text-md  ml-2">Product</span>
                 </div>
-              </Link>
-            </li>
+              </li>
+            </NavLink>
 
             <li
               onClick={() => setReward(!reward)}
-              className="flex w-full justify-between text-white hover:bg-[#391553] rounded-md cursor-pointer pl-4 pr-10 pt-2 pb-2 mb-2"
+              className="flex w-full justify-between text-white hover:bg-darkpurple rounded-md cursor-pointer pl-4 pr-10 pt-2 pb-2 mb-2"
             >
               <div className="flex items-center">
                 <GiftIcon size={20} />
 
-                <span className="text-md ml-2 mr-14">Rewards</span>
+                <span className="text-md ml-2 mr-14">Reward</span>
 
-                <ChevronDownIcon
-                  size={20}
-                  class="group-hover:-rotate-18 transition duration-150 ease-in-out"
-                />
+                <ChevronDownIcon size={20} />
               </div>
             </li>
 
@@ -74,36 +71,42 @@ const SideBar = () => {
               <div>
                 {' '}
                 <ul>
-                  <li className="flex w-full justify-between text-white hover:bg-[#391553] rounded-md cursor-pointer pl-4 pr-10 pt-2 pb-2 mb-2">
-                    <div className="flex items-center">
-                      <span className="text-md  ml-7">Bank Transfer</span>
-                    </div>
-                  </li>
+                  <NavLink to="/reward">
+                    <li className="flex w-full justify-between text-white hover:bg-darkpurple rounded-md cursor-pointer pl-4 pr-10 pt-2 pb-2 mb-2">
+                      <div className="flex items-center">
+                        <span className="text-md  ml-7">Bank Transfer</span>
+                      </div>
+                    </li>
+                  </NavLink>
 
-                  <li className="flex w-full justify-between text-white hover:bg-[#391553] rounded-md cursor-pointer pl-4 pr-10 pt-2 pb-2 mb-2">
-                    <div className="flex items-center">
-                      <span className="text-md  ml-7">E - Wallet</span>
-                    </div>
-                  </li>
+                  <NavLink to="/reward">
+                    <li className="flex w-full justify-between text-white hover:bg-darkpurple rounded-md cursor-pointer pl-4 pr-10 pt-2 pb-2 mb-2">
+                      <div className="flex items-center">
+                        <span className="text-md  ml-7">E - Wallet</span>
+                      </div>
+                    </li>
+                  </NavLink>
 
-                  <li className="flex w-full justify-between text-white hover:bg-[#391553] rounded-md cursor-pointer pl-4 pr-10 pt-2 pb-2 mb-2">
-                    <div className="flex items-center">
-                      <span className="text-md ml-7">Pulsa / Paket Data</span>
-                    </div>
-                  </li>
+                  <NavLink to="/reward">
+                    <li className="flex w-full justify-between text-white hover:bg-darkpurple rounded-md cursor-pointer pl-4 pr-10 pt-2 pb-2 mb-2">
+                      <div className="flex items-center">
+                        <span className="text-md ml-7">Pulsa / Paket Data</span>
+                      </div>
+                    </li>
+                  </NavLink>
                 </ul>{' '}
               </div>
             ) : null}
 
-            <li className="flex w-full justify-between text-white hover:bg-[#391553] rounded-md cursor-pointer pl-4 pr-10 pt-2 pb-2 mb-2">
-              <Link to="/history">
+            <NavLink to="/history">
+              <li className="flex w-full justify-between text-white hover:bg-darkpurple rounded-md cursor-pointer pl-4 pr-10 pt-2 pb-2 mb-2">
                 <div className="flex items-center">
                   <HourglassIcon size={20} />
 
                   <span className="text-md ml-2">History</span>
                 </div>
-              </Link>
-            </li>
+              </li>
+            </NavLink>
           </ul>
         </div>
       </div>
@@ -111,4 +114,4 @@ const SideBar = () => {
   )
 }
 
-export default SideBar
+export default Sidebar

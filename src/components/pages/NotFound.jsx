@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 
 const NotFound = () => {
-  document.title = '404 | not found'
+  document.title = '404 | Page Not Found'
 
   const navigate = useNavigate()
   const handleOK = () => {
@@ -19,7 +19,7 @@ const NotFound = () => {
               Oops! The page you are looking for does not exist.
             </p>
             <button
-              class="bg-gradient-to-r from-purple-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white font-semibold px-6 py-3 rounded-md mr-6"
+              class="text-white bg-purple hover:bg-darkpurple font-semibold px-6 py-1.5 rounded-md mr-6"
               onClick={handleOK}
             >
               OK
