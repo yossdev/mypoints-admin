@@ -1,31 +1,31 @@
 import React from 'react'
 
-const TableAgents = () => {
+const TableProduct = () => {
   return (
     <div class="w-sm mx-80 absolute mt-40">
       <div class="px-3 py-4 flex justify-center">
         <table class="w-full text-md bg-white shadow-md rounded mb-4">
           <tbody>
             <tr class="border-b">
-              <th class="text-left p-3 px-5">Name</th>
-              <th class="text-left p-3 px-5">Email</th>
+              <th class="text-left p-3 px-5">Title</th>
               <th class="text-left p-3 px-5">Poin</th>
               <th class="text-left p-3 px-5">Action</th>
               <th></th>
             </tr>
             <tr class="border-b hover:bg-orange-100 bg-gray-100">
               <td class="p-3 px-5">
-                <input type="text" value="agents.name" class="bg-transparent" />
-              </td>
-              <td class="p-3 px-5">
                 <input
                   type="text"
-                  value="agents.email"
+                  value="product.title"
                   class="bg-transparent"
                 />
               </td>
               <td class="p-3 px-5">
-                <p>1000</p>
+                <input
+                  type="text"
+                  value="product.poin"
+                  class="bg-transparent"
+                />
               </td>
               <td class="p-3 px-5 flex justify-end">
                 <button
@@ -49,4 +49,4 @@ const TableAgents = () => {
   )
 }
 
-export default TableAgents
+export default TableProduct
