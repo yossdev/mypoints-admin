@@ -1,6 +1,7 @@
-import React from 'react'
-
+import { useState } from 'react'
+import ModalAgent from '../organisms/ModalAgent'
 const TableAgents = () => {
+  const [openModal, setOpenModal] = useState(false)
   return (
     <div class="w-sm mx-80 absolute mt-40">
       <div class="px-3 py-4 flex justify-center">
@@ -31,6 +32,7 @@ const TableAgents = () => {
                 <button
                   type="button"
                   class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+                  onClick={() => setOpenModal(true)}
                 >
                   Edit
                 </button>
@@ -45,6 +47,7 @@ const TableAgents = () => {
           </tbody>
         </table>
       </div>
+      {openModal ? <ModalAgent /> : null}
     </div>
   )
 }

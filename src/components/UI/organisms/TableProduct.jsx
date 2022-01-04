@@ -1,6 +1,8 @@
-import React from 'react'
+import { useState } from 'react'
+import ModalProduct from '../organisms/ModalProduct'
 
 const TableProduct = () => {
+  const [openModal, setOpenModal] = useState(false)
   return (
     <div class="w-sm mx-80 absolute mt-40">
       <div class="px-3 py-4 flex justify-center">
@@ -30,6 +32,7 @@ const TableProduct = () => {
               <td class="p-3 px-5 flex justify-end">
                 <button
                   type="button"
+                  onClick={() => setOpenModal(true)}
                   class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
                 >
                   Edit
@@ -45,6 +48,7 @@ const TableProduct = () => {
           </tbody>
         </table>
       </div>
+      {openModal ? <ModalProduct /> : null}
     </div>
   )
 }
