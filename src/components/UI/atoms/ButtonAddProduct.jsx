@@ -14,7 +14,7 @@ const ButtonAddProduct = () => {
           Add Product
         </button>
       </div>
-      {openModal ? <ModalProduct /> : null}
+      {openModal ? <ModalProduct setOpenModal={setOpenModal} /> : null}
     </>
   )
 }

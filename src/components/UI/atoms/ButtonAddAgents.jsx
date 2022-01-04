@@ -14,7 +14,7 @@ const ButtonAddAgents = () => {
           Add Agent
         </button>
       </div>
-      {openModal ? <ModalAgent /> : null}
+      {openModal ? <ModalAgent setOpenModal={setOpenModal} /> : null}
     </>
   )
 }

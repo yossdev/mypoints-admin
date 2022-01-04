@@ -47,7 +47,7 @@ const TableAgents = () => {
           </tbody>
         </table>
       </div>
-      {openModal ? <ModalAgent /> : null}
+      {openModal ? <ModalAgent setOpenModal={setOpenModal} /> : null}
     </div>
   )
 }

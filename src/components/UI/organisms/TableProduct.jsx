@@ -48,7 +48,7 @@ const TableProduct = () => {
           </tbody>
         </table>
       </div>
-      {openModal ? <ModalProduct /> : null}
+      {openModal ? <ModalProduct setOpenModal={setOpenModal} /> : null}
     </div>
   )
 }

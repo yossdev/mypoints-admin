@@ -15,7 +15,7 @@ const ButtonEditProfile = () => {
           Edit Profile
         </button>
       </div>
-      {openModal ? <ModalProfile /> : null}
+      {openModal ? <ModalProfile setOpenModal={setOpenModal}/> : null}
     </>
   )
 }
