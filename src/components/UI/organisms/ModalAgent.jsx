@@ -1,7 +1,12 @@
 import { useState } from 'react'
-import Agents from '../../pages/Agents'
+
 const ModalAgent = () => {
-  const [showModal, setShowModal] = useState(false)
+  const [openModal, setOpenModal] = useState(true)
+
+  const handleCloseModal = () => {
+    setOpenModal(false)
+  }
+
   return (
     <>
       <div
@@ -15,7 +20,7 @@ const ModalAgent = () => {
             <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
               <h3 className="text-3xl font-semibold">Add Agent</h3>
               <button
-                onclick={() => setShowModal(true)}
+                onclick={handleCloseModal}
                 class="absolute -top-3 -right-3 bg-red-500 hover:bg-red-600 text-2xl w-10 h-10 rounded-full focus:outline-none text-white"
               >
                 X
@@ -74,7 +79,7 @@ const ModalAgent = () => {
               <button
                 className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button"
-                onclick={() => setShowModal(true)}
+                onclick={handleCloseModal}
               >
                 Create Account
               </button>
@@ -82,8 +87,7 @@ const ModalAgent = () => {
           </div>
         </div>
       </div>
-      <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-      {showModal ? <Agents /> : null}
+      <div className="opacity-25 fixed inset-0 z-40 bg-black" />
     </>
   )
 }
