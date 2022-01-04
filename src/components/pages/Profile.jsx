@@ -1,13 +1,37 @@
 import SideBar from '../UI/organisms/SideBar'
 import AdminMenu from '../UI/organisms/AdminMenu'
+import { PersonIcon } from '@primer/octicons-react'
+import ButtonEditProfile from '../UI/atoms/ButtonEditProfile'
 
 const Profile = () => {
   document.title = 'Profile'
   return (
-    <>
+    <div className="h-screen bg-grey">
       <SideBar />
       <AdminMenu />
-    </>
+      <div class="mx-80 absolute mt-40 grid grid-cols-2 gap-2 font-Roboto">
+        <img
+          src="https://krs.umm.ac.id/Poto/2018/201810370311018.JPG"
+          alt="profile"
+          class="max-w-xs h-auto rounded-full w-9/12"
+        />
+        <div class=" text-2xl grid grid-rows-6 mt-24">
+          <span>
+            Username : <span>Mohammad Wawan</span>
+          </span>
+          <span>
+            Email : <span>mohammadwawan.24@gmail.com</span>
+          </span>
+          <ButtonEditProfile />
+        </div>
+      </div>
+
+      <div className="ml-80 pt-3 font-Roboto">
+        <PersonIcon size={16} fill="darkgrey" />
+        <span className="text-sm ml-2 text-darkgrey">/ Profile</span> <br />
+        <span className="text-md text-darkgrey font-bold">Profile</span>
+      </div>
+    </div>
   )
 }
 export default Profile

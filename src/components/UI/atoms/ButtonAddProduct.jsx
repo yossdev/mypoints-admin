@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import ModalAgent from '../organisms/ModalAgent'
+import ModalProduct from '../organisms/ModalProduct'
 
-const ButtonAddAgents = () => {
+const ButtonAddProduct = () => {
   const [openModal, setOpenModal] = useState(false)
   return (
     <>
@@ -11,12 +11,12 @@ const ButtonAddAgents = () => {
     rounded mt-20"
           onClick={() => setOpenModal(true)}
         >
-          Add Agent
+          Add Product
         </button>
       </div>
-      {openModal ? <ModalAgent /> : null}
+      {openModal ? <ModalProduct /> : null}
     </>
   )
 }
 
-export default ButtonAddAgents
+export default ButtonAddProduct

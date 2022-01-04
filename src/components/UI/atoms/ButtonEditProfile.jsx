@@ -1,22 +1,23 @@
+import React from 'react'
 import { useState } from 'react'
-import ModalAgent from '../organisms/ModalAgent'
+import ModalProfile from '../organisms/ModalProfile'
 
-const ButtonAddAgents = () => {
+const ButtonEditProfile = () => {
   const [openModal, setOpenModal] = useState(false)
   return (
     <>
-      <div class="flex justify-end">
+      <div class="flex justify-start">
         <button
           class="absolute bg-blue-500 hover:bg-gray-700 text-white font-bold py-2 px-4 
-    rounded mt-20"
+      rounded"
           onClick={() => setOpenModal(true)}
         >
-          Add Agent
+          Edit Profile
         </button>
       </div>
-      {openModal ? <ModalAgent /> : null}
+      {openModal ? <ModalProfile /> : null}
     </>
   )
 }
 
-export default ButtonAddAgents
+export default ButtonEditProfile

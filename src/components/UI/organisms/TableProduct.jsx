@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import ModalAgent from '../organisms/ModalAgent'
-const TableAgents = () => {
+import ModalProduct from '../organisms/ModalProduct'
+
+const TableProduct = () => {
   const [openModal, setOpenModal] = useState(false)
   return (
     <div class="w-sm mx-80 absolute mt-40">
@@ -8,31 +9,31 @@ const TableAgents = () => {
         <table class="w-full text-md bg-white shadow-md rounded mb-4">
           <tbody>
             <tr class="border-b">
-              <th class="text-left p-3 px-5">Name</th>
-              <th class="text-left p-3 px-5">Email</th>
+              <th class="text-left p-3 px-5">Title</th>
               <th class="text-left p-3 px-5">Poin</th>
               <th class="text-left p-3 px-5">Action</th>
               <th></th>
             </tr>
             <tr class="border-b hover:bg-orange-100 bg-gray-100">
               <td class="p-3 px-5">
-                <input type="text" value="agents.name" class="bg-transparent" />
-              </td>
-              <td class="p-3 px-5">
                 <input
                   type="text"
-                  value="agents.email"
+                  value="product.title"
                   class="bg-transparent"
                 />
               </td>
               <td class="p-3 px-5">
-                <p>1000</p>
+                <input
+                  type="text"
+                  value="product.poin"
+                  class="bg-transparent"
+                />
               </td>
               <td class="p-3 px-5 flex justify-end">
                 <button
                   type="button"
-                  class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
                   onClick={() => setOpenModal(true)}
+                  class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
                 >
                   Edit
                 </button>
@@ -47,9 +48,9 @@ const TableAgents = () => {
           </tbody>
         </table>
       </div>
-      {openModal ? <ModalAgent /> : null}
+      {openModal ? <ModalProduct /> : null}
     </div>
   )
 }
 
-export default TableAgents
+export default TableProduct
