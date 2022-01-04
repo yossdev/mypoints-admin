@@ -15,7 +15,7 @@ const Register = () => {
 
           <div>
             <label
-              for="username"
+              htmlFor="username"
               className="text-sm font-medium text-purple block mb-2"
             >
               Your name
@@ -32,7 +32,7 @@ const Register = () => {
 
           <div>
             <label
-              for="email"
+              htmlFor="email"
               className="text-sm font-medium text-purple block mb-2"
             >
               Your email
@@ -49,7 +49,7 @@ const Register = () => {
 
           <div>
             <label
-              for="password"
+              htmlFor="password"
               className="text-sm font-medium text-purple block mb-2"
             >
               Your password

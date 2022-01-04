@@ -21,7 +21,7 @@ const ModalProfile = ({ setOpenModal }) => {
               <button
                 onclick="modalProduct(false)"
                 onClick={() => setOpenModal(false)}
-                class="absolute -top-3 -right-3 bg-red-500 hover:bg-red-600 text-2xl w-10 h-10 rounded-full focus:outline-none text-white"
+                className="absolute -top-3 -right-3 bg-red-500 hover:bg-red-600 text-2xl w-10 h-10 rounded-full focus:outline-none text-white"
               >
                 X
               </button>
@@ -32,19 +32,19 @@ const ModalProfile = ({ setOpenModal }) => {
                 <img
                   src={URL.createObjectURL(file)}
                   alt="profile"
-                  class="max-w-xs h-auto rounded-full w-3/12"
+                  className="max-w-xs h-auto rounded-full w-3/12"
                 />
               )}
-              <div class="flex justify-center">
-                <div class="mb-3 w-96">
+              <div className="flex justify-center">
+                <div className="mb-3 w-96">
                   <label
                     for="formFile"
-                    class="form-label inline-block mb-2 text-gray-700"
+                    className="form-label inline-block mb-2 text-gray-700"
                   >
                     Your photo
                   </label>
                   <input
-                    class="form-control
+                    className="form-control
                   block
                   w-full
                   px-3
@@ -67,13 +67,13 @@ const ModalProfile = ({ setOpenModal }) => {
               </div>
               <div>
                 <label
-                  class="text-gray-800 font-semibold block my-3 text-md"
+                  className="text-gray-800 font-semibold block my-3 text-md"
                   for="username"
                 >
                   Username
                 </label>
                 <input
-                  class="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
+                  className="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
                   type="text"
                   name="username"
                   id="username"
@@ -82,13 +82,13 @@ const ModalProfile = ({ setOpenModal }) => {
               </div>
               <div>
                 <label
-                  class="text-gray-800 font-semibold block my-3 text-md"
+                  className="text-gray-800 font-semibold block my-3 text-md"
                   for="point"
                 >
                   Email
                 </label>
                 <input
-                  class="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
+                  className="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
                   type="email"
                   name="email"
                   id="email"
@@ -97,13 +97,13 @@ const ModalProfile = ({ setOpenModal }) => {
               </div>
               <div>
                 <label
-                  class="text-gray-800 font-semibold block my-3 text-md"
+                  className="text-gray-800 font-semibold block my-3 text-md"
                   for="point"
                 >
                   Password
                 </label>
                 <input
-                  class="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
+                  className="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
                   type="password"
                   name="password"
                   id="password"

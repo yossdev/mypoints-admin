@@ -11,6 +11,9 @@ import History from './components/pages/History'
 import NotFound from './components/pages/NotFound'
 import Profile from './components/pages/Profile'
 import PageError from './components/pages/PageError'
+import BankTransfer from './components/pages/BankTransfer'
+import EWallet from './components/pages/EWallet'
+import PulsaPaketData from './components/pages/PulsaPaketData'
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
         <Route path="reward" element={<Reward />}></Route>
         <Route path="history" element={<History />}></Route>
         <Route path="profile" element={<Profile />}></Route>
+        <Route path="banktransfer" element={<BankTransfer />}></Route>
+        <Route path="E-Wallet" element={<EWallet />}></Route>
+        <Route path="pulsapaketdata" element={<PulsaPaketData />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </BrowserRouter>

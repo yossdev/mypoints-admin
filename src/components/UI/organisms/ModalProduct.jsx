@@ -13,7 +13,7 @@ const ModalProduct = ({ setOpenModal }) => {
               <h3 className="text-3xl font-semibold">Add Product</h3>
               <button
                 onClick={() => setOpenModal(false)}
-                class="absolute -top-3 -right-3 bg-red-500 hover:bg-red-600 text-2xl w-10 h-10 rounded-full focus:outline-none text-white"
+                className="absolute -top-3 -right-3 bg-red-500 hover:bg-red-600 text-2xl w-10 h-10 rounded-full focus:outline-none text-white"
               >
                 X
               </button>
@@ -22,13 +22,13 @@ const ModalProduct = ({ setOpenModal }) => {
             <div className="relative p-6 flex-auto">
               <div>
                 <label
-                  class="text-gray-800 font-semibold block my-3 text-md"
+                  className="text-gray-800 font-semibold block my-3 text-md"
                   for="product"
                 >
                   Product
                 </label>
                 <input
-                  class="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
+                  className="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
                   type="text"
                   name="product"
                   id="product"
@@ -37,13 +37,13 @@ const ModalProduct = ({ setOpenModal }) => {
               </div>
               <div>
                 <label
-                  class="text-gray-800 font-semibold block my-3 text-md"
+                  className="text-gray-800 font-semibold block my-3 text-md"
                   for="point"
                 >
                   Point
                 </label>
                 <input
-                  class="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
+                  className="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
                   type="number"
                   name="point"
                   id="point"

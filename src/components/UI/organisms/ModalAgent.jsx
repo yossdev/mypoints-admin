@@ -13,7 +13,7 @@ const ModalAgent = ({ setOpenModal }) => {
               <h3 className="text-3xl font-semibold">Add Agent</h3>
               <button
                 onClick={() => setOpenModal(false)}
-                class="absolute -top-3 -right-3 bg-red-500 hover:bg-red-600 text-2xl w-10 h-10 rounded-full focus:outline-none text-white"
+                className="absolute -top-3 -right-3 bg-red-500 hover:bg-red-600 text-2xl w-10 h-10 rounded-full focus:outline-none text-white"
               >
                 X
               </button>
@@ -22,13 +22,13 @@ const ModalAgent = ({ setOpenModal }) => {
             <div className="relative p-6 flex-auto">
               <div>
                 <label
-                  class="text-gray-800 font-semibold block my-3 text-md"
-                  for="username"
+                  className="text-gray-800 font-semibold block my-3 text-md"
+                  htmlFor="username"
                 >
                   Username
                 </label>
                 <input
-                  class="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
+                  className="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
                   type="text"
                   name="username"
                   id="username"
@@ -37,29 +37,29 @@ const ModalAgent = ({ setOpenModal }) => {
               </div>
               <div>
                 <label
-                  class="text-gray-800 font-semibold block my-3 text-md"
-                  for="email"
+                  className="text-gray-800 font-semibold block my-3 text-md"
+                  htmlFor="email"
                 >
                   Email
                 </label>
                 <input
-                  class="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
+                  className="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
                   type="email"
                   placeholder="yourname@gmail.com"
-                  autocomplete="on"
+                  autoComplete="on"
                   required
                   id="email"
                 />
               </div>
               <div>
                 <label
-                  class="text-gray-800 font-semibold block my-3 text-md"
-                  for="password"
+                  className="text-gray-800 font-semibold block my-3 text-md"
+                  htmlFor="password"
                 >
                   Password
                 </label>
                 <input
-                  class="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
+                  className="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
                   type="password"
                   required
                   id="password"

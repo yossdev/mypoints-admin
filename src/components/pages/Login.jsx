@@ -1,7 +1,49 @@
 import logo from '../UI/atoms/logo.svg'
+import axios from 'axios'
+import { useState } from 'react'
+
+const baseURL = 'https://server.mypoints.site/api/v1/admin/login'
 
 const Login = () => {
   document.title = 'Login'
+
+  const dataLogin = {
+    email: '',
+    password: '',
+  }
+
+  const [reqBody, setReqBody] = useState(dataLogin)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState()
+
+  const handleChange = (e) => {
+    const value = e.target.value
+    setReqBody({
+      ...reqBody,
+      [e.target.name]: value,
+    })
+  }
+
+  const handleLogin = (e) => {
+    e.preventDefault()
+    setLoading(true)
+    axios
+      .post(baseURL, reqBody)
+      .then(function (response) {
+        // dispatch redux untuk simpan jwt access token
+        console.log('berhasil login', response.data.data)
+      })
+      .catch(function (err) {
+        setError(err)
+        // console.log('ada error', err)
+      })
+      .finally(() => {
+        setLoading(false)
+      })
+  }
+
+  if (loading) return <h1>loading...</h1>
+  // if (error) return <h1>error...</h1>
 
   return (
     <div className="h-screen bg-purple flex items-center font-Roboto">
@@ -12,10 +54,11 @@ const Login = () => {
           <h3 className="text-xl font-medium text-purple">
             Selamat Datang Para Admin
           </h3>
+          {error && <h1>Gagal Login...</h1>}
 
           <div>
             <label
-              for="email"
+              htmlFor="email"
               className="text-sm font-medium text-purple block mb-2"
             >
               Your email
@@ -26,13 +69,14 @@ const Login = () => {
               id="email"
               className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5"
               placeholder="name@company.com"
+              onChange={handleChange}
               required
             />
           </div>
 
           <div>
             <label
-              for="password"
+              htmlFor="password"
               className="text-sm font-medium text-purple block mb-2"
             >
               Your password
@@ -44,6 +88,7 @@ const Login = () => {
               id="password"
               placeholder="••••••••"
               className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5"
+              onChange={handleChange}
               required
             />
           </div>

@@ -6,16 +6,16 @@ const ButtonEditProfile = () => {
   const [openModal, setOpenModal] = useState(false)
   return (
     <>
-      <div class="flex justify-start">
+      <div className="flex justify-start">
         <button
-          class="absolute bg-blue-500 hover:bg-gray-700 text-white font-bold py-2 px-4 
+          className="absolute bg-blue-500 hover:bg-gray-700 text-white font-bold py-2 px-4 
       rounded"
           onClick={() => setOpenModal(true)}
         >
           Edit Profile
         </button>
       </div>
-      {openModal ? <ModalProfile setOpenModal={setOpenModal}/> : null}
+      {openModal ? <ModalProfile setOpenModal={setOpenModal} /> : null}
     </>
   )
 }
