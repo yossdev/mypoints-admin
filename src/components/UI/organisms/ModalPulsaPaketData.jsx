@@ -1,4 +1,6 @@
-const ModalAgent = ({ setOpenModal }) => {
+import React from 'react'
+
+const ModalPulsaPaketData = ({ setOpenModal }) => {
   return (
     <>
       <div
@@ -11,7 +13,9 @@ const ModalAgent = ({ setOpenModal }) => {
           <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
             {/*header*/}
             <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-              <h3 className="text-3xl font-semibold">Add Agent</h3>
+              <h3 className="text-3xl font-semibold">
+                Add Reward (Pulsa / Paket Data)
+              </h3>
               <button
                 onClick={() => setOpenModal(false)}
                 className="absolute -top-3 -right-3 bg-red-500 hover:bg-red-600 text-2xl w-10 h-10 rounded-full focus:outline-none text-white"
@@ -24,46 +28,56 @@ const ModalAgent = ({ setOpenModal }) => {
               <div>
                 <label
                   className="text-gray-800 font-semibold block my-3 text-md"
-                  htmlFor="username"
+                  htmlFor="pulsapaketdata"
                 >
-                  Username
+                  Pulsa / Paket Data
+                </label>
+                <label class="flex radio cursor-pointer">
+                  <input
+                    class="my-auto transform scale-125"
+                    type="radio"
+                    name="pulsapaketdata"
+                  />
+                  <div class="title px-2">Pulsa</div>
+                </label>
+
+                <label class="flex radio cursor-pointer">
+                  <input
+                    class="my-auto transform scale-125"
+                    type="radio"
+                    name="pulsapaketdata"
+                  />
+                  <div class="title px-2">Paket Data</div>
+                </label>
+              </div>
+              <div>
+                <label
+                  className="text-gray-800 font-Roboto block my-3 text-md"
+                  htmlFor="value"
+                >
+                  Value
                 </label>
                 <input
                   className="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
-                  type="text"
-                  name="username"
-                  id="username"
-                  placeholder="username"
+                  type="number"
+                  name="value"
+                  id="value"
+                  placeholder="value"
                 />
               </div>
               <div>
                 <label
-                  className="text-gray-800 font-semibold block my-3 text-md"
-                  htmlFor="email"
+                  className="text-gray-800 font-Roboto block my-3 text-md"
+                  htmlFor="point"
                 >
-                  Email
+                  Point
                 </label>
                 <input
                   className="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
-                  type="email"
-                  placeholder="yourname@gmail.com"
-                  autoComplete="on"
-                  required
-                  id="email"
-                />
-              </div>
-              <div>
-                <label
-                  className="text-gray-800 font-semibold block my-3 text-md"
-                  htmlFor="password"
-                >
-                  Password
-                </label>
-                <input
-                  className="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
-                  type="password"
-                  required
-                  id="password"
+                  type="number"
+                  name="point"
+                  id="point"
+                  placeholder="point"
                 />
               </div>
             </div>
@@ -74,15 +88,15 @@ const ModalAgent = ({ setOpenModal }) => {
                 type="button"
                 onClick={() => setOpenModal(false)}
               >
-                Create Account
+                Save Changes
               </button>
             </div>
           </div>
         </div>
       </div>
-      <div className="opacity-25 fixed inset-0 z-40 bg-black" />
+      <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
     </>
   )
 }
 
-export default ModalAgent
+export default ModalPulsaPaketData

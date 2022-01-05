@@ -15,13 +15,13 @@ const Profile = () => {
           alt="profile"
           className="max-w-xs h-auto rounded-full w-9/12"
         />
-        <div className=" text-2xl grid grid-rows-6 mt-24">
-          <span>
+        <div className=" text-lg grid grid-rows-6 mt-24">
+          <p>
             Username : <span>Mohammad Wawan</span>
-          </span>
-          <span>
+          </p>
+          <p>
             Email : <span>mohammadwawan.24@gmail.com</span>
-          </span>
+          </p>
           <ButtonEditProfile />
         </div>
       </div>

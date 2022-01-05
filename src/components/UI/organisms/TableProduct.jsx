@@ -9,8 +9,8 @@ const TableProduct = () => {
         <table className="w-full text-md bg-white shadow-md rounded mb-4">
           <tbody>
             <tr className="border-b">
-              <th className="text-left p-3 px-5">Title</th>
-              <th className="text-left p-3 px-5">Poin</th>
+              <th className="text-left p-3 px-5">Product</th>
+              <th className="text-left p-3 px-5">Point</th>
               <th className="text-left p-3 px-5">Action</th>
               <th></th>
             </tr>

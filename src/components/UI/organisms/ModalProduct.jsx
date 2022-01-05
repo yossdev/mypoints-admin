@@ -4,6 +4,7 @@ const ModalProduct = ({ setOpenModal }) => {
       <div
         className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
         id="modalProduct"
+        onClick={() => setOpenModal(false)}
       >
         <div className="relative w-auto my-6 mx-auto max-w-3xl">
           {/*content*/}
@@ -23,7 +24,7 @@ const ModalProduct = ({ setOpenModal }) => {
               <div>
                 <label
                   className="text-gray-800 font-semibold block my-3 text-md"
-                  for="product"
+                  htmlFor="product"
                 >
                   Product
                 </label>
@@ -38,7 +39,7 @@ const ModalProduct = ({ setOpenModal }) => {
               <div>
                 <label
                   className="text-gray-800 font-semibold block my-3 text-md"
-                  for="point"
+                  htmlFor="point"
                 >
                   Point
                 </label>

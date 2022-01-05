@@ -11,6 +11,7 @@ const ModalProfile = ({ setOpenModal }) => {
       <div
         className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
         id="modalProduct"
+        onClick={() => setOpenModal(false)}
       >
         <div className="relative w-auto my-6 mx-auto max-w-3xl">
           {/*content*/}
@@ -67,28 +68,56 @@ const ModalProfile = ({ setOpenModal }) => {
               </div>
               <div>
                 <label
-                  className="text-gray-800 font-semibold block my-3 text-md"
+                  className="form-label inline-block mb-2 text-gray-700 text-sm"
                   for="username"
                 >
                   Username
                 </label>
                 <input
-                  className="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
+                  className="form-control
+                  block
+                  w-full
+                  px-2
+                  py-1
+                  text-sm
+                  font-normal
+                  text-gray-700
+                  bg-white bg-clip-padding
+                  border border-solid border-gray-300
+                  rounded
+                  transition
+                  ease-in-out
+                  m-0
+                  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   type="text"
-                  name="username"
-                  id="username"
+                  name="name"
+                  id="name"
                   placeholder="new username"
                 />
               </div>
               <div>
                 <label
-                  className="text-gray-800 font-semibold block my-3 text-md"
+                  className="form-label inline-block mb-2 text-gray-700 text-sm"
                   for="point"
                 >
                   Email
                 </label>
                 <input
-                  className="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
+                  className="form-control
+                  block
+                  w-full
+                  px-2
+                  py-1
+                  text-sm
+                  font-normal
+                  text-gray-700
+                  bg-white bg-clip-padding
+                  border border-solid border-gray-300
+                  rounded
+                  transition
+                  ease-in-out
+                  m-0
+                  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   type="email"
                   name="email"
                   id="email"
@@ -97,13 +126,27 @@ const ModalProfile = ({ setOpenModal }) => {
               </div>
               <div>
                 <label
-                  className="text-gray-800 font-semibold block my-3 text-md"
+                  className="form-label inline-block mb-2 text-gray-700 text-sm"
                   for="point"
                 >
                   Password
                 </label>
                 <input
-                  className="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
+                  className="form-control
+                  block
+                  w-full
+                  px-2
+                  py-1
+                  text-sm
+                  font-normal
+                  text-gray-700
+                  bg-white bg-clip-padding
+                  border border-solid border-gray-300
+                  rounded
+                  transition
+                  ease-in-out
+                  m-0
+                  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   type="password"
                   name="password"
                   id="password"

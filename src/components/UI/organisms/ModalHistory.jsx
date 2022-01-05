@@ -6,6 +6,7 @@ const ModalHistory = ({ setOpenModal }) => {
       <div
         className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
         id="modalProduct"
+        onClick={() => setOpenModal(false)}
       >
         <div className="relative w-auto my-6 mx-auto max-w-3xl">
           {/*content*/}
@@ -21,7 +22,7 @@ const ModalHistory = ({ setOpenModal }) => {
               </button>
             </div>
             {/*body*/}
-            <div className="relative p-6 flex-auto">
+            <div className="relative p-6 flex-auto grid grid-rows-4 grid-flow-col gap-4">
               <div>
                 <label
                   class="text-gray-800 font-semibold block my-3 text-md"
