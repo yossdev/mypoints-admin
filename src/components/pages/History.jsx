@@ -1,8 +1,8 @@
-import SideBar from '../../UI/organisms/SideBar'
-import AdminMenu from '../../UI/organisms/AdminMenu'
+import SideBar from '../UI/organisms/SideBar'
+import AdminMenu from '../UI/organisms/AdminMenu'
 
 import { HourglassIcon } from '@primer/octicons-react'
-import TableHistory from '../../UI/organisms/TableHistory'
+import TableHistory from '../UI/organisms/TableHistory'
 
 const History = () => {
   document.title = 'History'

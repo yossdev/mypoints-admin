@@ -1,7 +1,7 @@
-import SideBar from '../../UI/organisms/SideBar'
-import AdminMenu from '../../UI/organisms/AdminMenu'
-import TableEWallet from '../../UI/organisms/TableEWallet'
-import ButtonAddRewardEWallet from '../../UI/atoms/ButtonAddRewardEWallet'
+import SideBar from '../UI/organisms/SideBar'
+import AdminMenu from '../UI/organisms/AdminMenu'
+import TableEWallet from '../UI/organisms/TableEWallet'
+import ButtonAddRewardEWallet from '../UI/atoms/ButtonAddRewardEWallet'
 
 const EWallet = () => {
   document.title = 'E-Wallet'
