@@ -1,9 +1,9 @@
-import AdminMenu from '../UI/organisms/AdminMenu'
-import SideBar from '../UI/organisms/SideBar'
+import AdminMenu from '../../UI/organisms/AdminMenu'
+import SideBar from '../../UI/organisms/SideBar'
 
 import { HomeIcon } from '@primer/octicons-react'
-import ChartPenjualan from '../UI/organisms/ChartPenjualan'
-import CardDashboard from '../UI/organisms/CardDashboard'
+import ChartPenjualan from '../../UI/organisms/ChartPenjualan'
+import CardDashboard from '../../UI/organisms/CardDashboard'
 
 const Dashboard = () => {
   document.title = 'Dashboard'

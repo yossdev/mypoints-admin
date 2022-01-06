@@ -1,10 +1,10 @@
-import SideBar from '../UI/organisms/SideBar'
-import AdminMenu from '../UI/organisms/AdminMenu'
+import SideBar from '../../UI/organisms/SideBar'
+import AdminMenu from '../../UI/organisms/AdminMenu'
 
-import TableAgents from '../UI/organisms/TableAgents'
+import TableAgents from '../../UI/organisms/TableAgents'
 
 import { PersonIcon } from '@primer/octicons-react'
-import ButtonAddAgents from '../UI/atoms/ButtonAddAgents'
+import ButtonAddAgents from '../../UI/atoms/ButtonAddAgents'
 
 const Agents = () => {
   document.title = 'Agents'

@@ -1,7 +1,7 @@
-import SideBar from '../UI/organisms/SideBar'
-import AdminMenu from '../UI/organisms/AdminMenu'
-import TableBankTransfer from '../UI/organisms/TableBankTransfer'
-import ButtonAddRewardBank from '../UI/atoms/ButtonAddRewardBank'
+import SideBar from '../../UI/organisms/SideBar'
+import AdminMenu from '../../UI/organisms/AdminMenu'
+import TableBankTransfer from '../../UI/organisms/TableBankTransfer'
+import ButtonAddRewardBank from '../../UI/atoms/ButtonAddRewardBank'
 
 const BankTransfer = () => {
   document.title = 'Bank Transfer'

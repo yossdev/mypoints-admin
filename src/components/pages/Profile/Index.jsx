@@ -1,7 +1,7 @@
-import SideBar from '../UI/organisms/SideBar'
-import AdminMenu from '../UI/organisms/AdminMenu'
+import SideBar from '../../UI/organisms/SideBar'
+import AdminMenu from '../../UI/organisms/AdminMenu'
 import { PersonIcon } from '@primer/octicons-react'
-import ButtonEditProfile from '../UI/atoms/ButtonEditProfile'
+import ButtonEditProfile from '../../UI/atoms/ButtonEditProfile'
 
 const Profile = () => {
   document.title = 'Profile'

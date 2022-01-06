@@ -1,5 +1,5 @@
-import SideBar from '../UI/organisms/SideBar'
-import AdminMenu from '../UI/organisms/AdminMenu'
+import SideBar from '../../UI/organisms/SideBar'
+import AdminMenu from '../../UI/organisms/AdminMenu'
 
 import { GiftIcon } from '@primer/octicons-react'
 const Reward = () => {

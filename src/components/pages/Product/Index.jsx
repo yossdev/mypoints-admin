@@ -1,10 +1,10 @@
-import SideBar from '../UI/organisms/SideBar'
-import AdminMenu from '../UI/organisms/AdminMenu'
+import SideBar from '../../UI/organisms/SideBar'
+import AdminMenu from '../../UI/organisms/AdminMenu'
 
 import { TagIcon } from '@primer/octicons-react'
 
-import TableProduct from '../UI/organisms/TableProduct'
-import ButtonAddProduct from '../UI/atoms/ButtonAddProduct'
+import TableProduct from '../../UI/organisms/TableProduct'
+import ButtonAddProduct from '../../UI/atoms/ButtonAddProduct'
 
 const Product = () => {
   document.title = 'Product'
