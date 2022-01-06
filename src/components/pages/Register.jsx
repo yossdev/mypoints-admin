@@ -49,7 +49,7 @@ const Register = () => {
 
   return (
     <div className="h-screen bg-purple flex items-center font-Roboto">
-      <div className="mx-auto space-y-6 bg-white shadow-md border border-white rounded-lg lg:px-10 lg:pb-8">
+      <div className="mx-auto space-y-6 bg-white shadow-md border border-white rounded-lg sm:px-10 sm:pb-8">
         <form
           method="post"
           className="space-y-6"
@@ -61,6 +61,7 @@ const Register = () => {
           <h3 className="text-xl font-medium text-purple">
             Silahkan Daftarkan Akun Anda
           </h3>
+          {error && <h1>Gagal Login...</h1>}
 
           <div>
             <label
