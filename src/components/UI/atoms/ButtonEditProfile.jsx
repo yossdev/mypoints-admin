@@ -6,7 +6,7 @@ const ButtonEditProfile = () => {
   const [openModal, setOpenModal] = useState(false)
   return (
     <>
-      <div className="flex justify-start">
+      <div className="sm:flex justify-start">
         <button
           className="absolute bg-blue-500 hover:bg-gray-700 text-white font-bold py-2 px-4 
       rounded"
