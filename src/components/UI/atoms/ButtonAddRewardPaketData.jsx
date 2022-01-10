@@ -1,22 +1,22 @@
 import { useState } from 'react'
-import ModalProduct from '../organisms/ModalProduct'
+import ModalPulsaPaketData from '../organisms/ModalPulsaPaketData'
 
-const ButtonAddProduct = () => {
+const ButtonAddRewardPaketData = () => {
   const [openModal, setOpenModal] = useState(false)
   return (
     <>
       <div className="sm:flex justify-end">
         <button
           className="absolute bg-blue-500 hover:bg-gray-700 text-white font-bold py-2 px-4 
-    rounded mt-20"
+      rounded mt-20"
           onClick={() => setOpenModal(true)}
         >
-          Add Product
+          Add Reward
         </button>
       </div>
-      {openModal ? <ModalProduct setOpenModal={setOpenModal} /> : null}
+      {openModal ? <ModalPulsaPaketData setOpenModal={setOpenModal} /> : null}
     </>
   )
 }
 
-export default ButtonAddProduct
+export default ButtonAddRewardPaketData

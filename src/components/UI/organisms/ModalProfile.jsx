@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const ModalProfile = () => {
+const ModalProfile = ({ setOpenModal }) => {
   const [file, setFile] = useState()
 
   const onChangePhoto = (e) => {
@@ -20,7 +20,8 @@ const ModalProfile = () => {
               <h3 className="text-3xl font-semibold">Edit Profile</h3>
               <button
                 onclick="modalProduct(false)"
-                class="absolute -top-3 -right-3 bg-red-500 hover:bg-red-600 text-2xl w-10 h-10 rounded-full focus:outline-none text-white"
+                onClick={() => setOpenModal(false)}
+                className="absolute -top-3 -right-3 bg-red-500 hover:bg-red-600 text-2xl w-10 h-10 rounded-full focus:outline-none text-white"
               >
                 X
               </button>
@@ -31,19 +32,19 @@ const ModalProfile = () => {
                 <img
                   src={URL.createObjectURL(file)}
                   alt="profile"
-                  class="max-w-xs h-auto rounded-full w-3/12"
+                  className="max-w-xs h-auto rounded-full w-3/12"
                 />
               )}
-              <div class="flex justify-center">
-                <div class="mb-3 w-96">
+              <div className="flex justify-center">
+                <div className="mb-3 w-96">
                   <label
                     for="formFile"
-                    class="form-label inline-block mb-2 text-gray-700"
+                    className="form-label inline-block mb-2 text-gray-700"
                   >
                     Your photo
                   </label>
                   <input
-                    class="form-control
+                    className="form-control
                   block
                   w-full
                   px-3
@@ -66,28 +67,56 @@ const ModalProfile = () => {
               </div>
               <div>
                 <label
-                  class="text-gray-800 font-semibold block my-3 text-md"
+                  className="form-label inline-block mb-2 text-gray-700 text-sm"
                   for="username"
                 >
                   Username
                 </label>
                 <input
-                  class="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
+                  className="form-control
+                  block
+                  w-full
+                  px-2
+                  py-1
+                  text-sm
+                  font-normal
+                  text-gray-700
+                  bg-white bg-clip-padding
+                  border border-solid border-gray-300
+                  rounded
+                  transition
+                  ease-in-out
+                  m-0
+                  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   type="text"
-                  name="username"
-                  id="username"
+                  name="name"
+                  id="name"
                   placeholder="new username"
                 />
               </div>
               <div>
                 <label
-                  class="text-gray-800 font-semibold block my-3 text-md"
+                  className="form-label inline-block mb-2 text-gray-700 text-sm"
                   for="point"
                 >
                   Email
                 </label>
                 <input
-                  class="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
+                  className="form-control
+                  block
+                  w-full
+                  px-2
+                  py-1
+                  text-sm
+                  font-normal
+                  text-gray-700
+                  bg-white bg-clip-padding
+                  border border-solid border-gray-300
+                  rounded
+                  transition
+                  ease-in-out
+                  m-0
+                  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   type="email"
                   name="email"
                   id="email"
@@ -96,13 +125,27 @@ const ModalProfile = () => {
               </div>
               <div>
                 <label
-                  class="text-gray-800 font-semibold block my-3 text-md"
+                  className="form-label inline-block mb-2 text-gray-700 text-sm"
                   for="point"
                 >
                   Password
                 </label>
                 <input
-                  class="w-full bg-gray-100 px-8 py-2 rounded-lg focus:outline-none"
+                  className="form-control
+                  block
+                  w-full
+                  px-2
+                  py-1
+                  text-sm
+                  font-normal
+                  text-gray-700
+                  bg-white bg-clip-padding
+                  border border-solid border-gray-300
+                  rounded
+                  transition
+                  ease-in-out
+                  m-0
+                  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   type="password"
                   name="password"
                   id="password"
@@ -115,6 +158,7 @@ const ModalProfile = () => {
               <button
                 className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button"
+                onClick={() => setOpenModal(false)}
               >
                 Save Changes
               </button>

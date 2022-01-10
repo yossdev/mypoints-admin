@@ -9,19 +9,19 @@ const Profile = () => {
     <div className="h-screen bg-grey">
       <SideBar />
       <AdminMenu />
-      <div class="mx-80 absolute mt-40 grid grid-cols-2 gap-2 font-Roboto">
+      <div className="mx-80 absolute mt-40 grid grid-cols-2 gap-2 font-Roboto">
         <img
           src="https://krs.umm.ac.id/Poto/2018/201810370311018.JPG"
           alt="profile"
-          class="max-w-xs h-auto rounded-full w-9/12"
+          className="max-w-xs h-auto rounded-full w-9/12"
         />
-        <div class=" text-2xl grid grid-rows-6 mt-24">
-          <span>
+        <div className=" text-lg grid grid-rows-6 mt-24">
+          <p>
             Username : <span>Mohammad Wawan</span>
-          </span>
-          <span>
+          </p>
+          <p>
             Email : <span>mohammadwawan.24@gmail.com</span>
-          </span>
+          </p>
           <ButtonEditProfile />
         </div>
       </div>

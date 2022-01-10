@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import ModalProduct from '../organisms/ModalProduct'
+import ModalBankTransfer from '../organisms/ModalBankTransfer'
 
-const ButtonAddProduct = () => {
+const ButtonAddRewardBank = () => {
   const [openModal, setOpenModal] = useState(false)
   return (
     <>
@@ -11,12 +11,12 @@ const ButtonAddProduct = () => {
     rounded mt-20"
           onClick={() => setOpenModal(true)}
         >
-          Add Product
+          Add Reward
         </button>
       </div>
-      {openModal ? <ModalProduct setOpenModal={setOpenModal} /> : null}
+      {openModal ? <ModalBankTransfer setOpenModal={setOpenModal} /> : null}
     </>
   )
 }
 
-export default ButtonAddProduct
+export default ButtonAddRewardBank
