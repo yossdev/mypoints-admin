@@ -1,39 +1,43 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import Homepage from './components/pages/Homepage'
+import LandingPage from './components/pages/LandingPage'
 import Login from './components/pages/Login'
 import Register from './components/pages/Register'
+
 import Dashboard from './components/pages/Dashboard'
-import Agents from './components/pages/Agents'
+import Agent from './components/pages/Agents'
 import Product from './components/pages/Product'
 import Reward from './components/pages/Reward'
-import History from './components/pages/History'
-import NotFound from './components/pages/NotFound'
-import Profile from './components/pages/Profile'
-import PageError from './components/pages/PageError'
-import BankTransfer from './components/pages/BankTransfer'
-import EWallet from './components/pages/EWallet'
-import PulsaPaketData from './components/pages/PulsaPaketData'
 
-function App() {
+import Profile from './components/pages/Profile'
+
+// import PrivateRoute from './components/private/PrivateRoute'
+
+import NotFound from './components/pages/NotFound'
+
+const App = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
-        <Route path="/" element={<Homepage />}></Route>
-        <Route path="login" element={<Login />}></Route>
-        <Route path="register" element={<Register />}></Route>
-        <Route path="dashboard" element={<Dashboard />}></Route>
-        <Route path="agents" element={<Agents />}></Route>
-        <Route path="product" element={<Product />}></Route>
-        <Route path="reward" element={<Reward />}></Route>
-        <Route path="history" element={<History />}></Route>
-        <Route path="profile" element={<Profile />}></Route>
-        <Route path="banktransfer" element={<BankTransfer />}></Route>
-        <Route path="E-Wallet" element={<EWallet />}></Route>
-        <Route path="pulsapaketdata" element={<PulsaPaketData />}></Route>
-        <Route path="*" element={<NotFound />}></Route>
+        {/* Public */}
+        <Route path="/" element={<LandingPage />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+
+        {/* Private */}
+        {/* <Route element={<PrivateRoute />}> */}
+        {/* <Route element={<DashboardLayout />}> */}
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="agent" element={<Agent />} />
+        <Route path="product" element={<Product />} />
+        <Route path="reward" element={<Reward />} />
+        <Route path="profile" element={<Profile />} />
+        {/* </Route> */}
+        {/* </Route> */}
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   )
 }
 
