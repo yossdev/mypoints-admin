@@ -1,4 +1,8 @@
 import { PersonIcon } from '@primer/octicons-react'
+import TableAgent from '../../UI/organisms/Agents/TableAgent'
+
+import Sidebar from '../../UI/organisms/Sidebar'
+import UserMenu from '../../UI/organisms/UserMenu'
 
 const Agents = () => {
   document.title = 'Agents'
@@ -6,9 +10,24 @@ const Agents = () => {
 
   return (
     <>
-      <div className="ml-80 pt-3 font-Roboto">
-        <PersonIcon size={16} fill="darkgrey" />
-        <span className="text-lg text-darkgrey font-bold">/ Agents</span>
+      {/* <Sidebar /> */}
+      <UserMenu />
+
+      <div className="ml-80 pt-3 font-roboto">
+        <PersonIcon size={20} fill="#5C5C5C" />
+        <span className="text-lg text-darkgrey font-bold"> Agents</span>
+      </div>
+
+      <div
+        style={{
+          marginTop: '30px',
+          width: '80%',
+          padding: '20px',
+          float: 'right',
+          border: 'red solid 1px',
+        }}
+      >
+        <TableAgent />
       </div>
     </>
   )

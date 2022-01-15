@@ -6,9 +6,9 @@ const Product = () => {
 
   return (
     <>
-      <div className="ml-80 pt-3 font-Roboto">
-        <TagIcon size={16} fill="darkgrey" />
-        <span className="text-lg text-darkgrey font-bold">/ Product</span>
+      <div className="ml-80 pt-3 font-roboto">
+        <TagIcon size={20} fill="#5C5C5C" />
+        <span className="text-lg text-darkgrey font-bold"> Products</span>
       </div>
     </>
   )
