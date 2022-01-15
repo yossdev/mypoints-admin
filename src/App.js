@@ -8,9 +8,9 @@ import DashboardLayout from './components/pages/Dashboard/Layout'
 import Dashboard from './components/pages/Dashboard'
 
 import Agent from './components/pages/Agents'
-import Product from './components/pages/Product'
-import Reward from './components/pages/Reward'
-import Transactions from './components/pages/Transaction'
+import Product from './components/pages/Products'
+import Reward from './components/pages/Rewards'
+import Transactions from './components/pages/Transactions'
 
 import Profile from './components/pages/Profile'
 
