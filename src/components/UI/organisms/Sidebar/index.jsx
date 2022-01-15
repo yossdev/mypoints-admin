@@ -1,13 +1,19 @@
 import { Link, NavLink } from 'react-router-dom'
 
-import { PersonIcon, TagIcon, GiftIcon, HomeIcon } from '@primer/octicons-react'
+import {
+  PersonIcon,
+  TagIcon,
+  GiftIcon,
+  HomeIcon,
+  ChecklistIcon,
+} from '@primer/octicons-react'
 
 import logoWhite from '../../../../assets/logo-white.svg'
 
 const Sidebar = () => {
   return (
     <>
-      <div className="fixed w-1/5 float-left top-0 left-0 bottom-0 h-full bg-purple shadow flex-col justify-between sm:flex font-roboto">
+      <div className="fixed top-0 left-0 bottom-0 h-full bg-purple shadow flex-col justify-between sm:flex font-roboto">
         <div className="pl-5 pr-5">
           <Link to="/">
             <div className="h-16 w-full pl-2 flex items-center">
@@ -48,6 +54,15 @@ const Sidebar = () => {
                 <div className="flex items-center">
                   <GiftIcon size={20} />
                   <span className="text-md ml-2">Rewards</span>
+                </div>
+              </li>
+            </NavLink>
+
+            <NavLink to="/transaction">
+              <li className="flex w-full justify-between text-white hover:bg-darkpurple rounded-md cursor-pointer pl-4 pr-10 pt-2 pb-2 mb-2">
+                <div className="flex items-center">
+                  <ChecklistIcon size={20} />
+                  <span className="text-md ml-2">Transactions</span>
                 </div>
               </li>
             </NavLink>

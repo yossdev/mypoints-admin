@@ -7,28 +7,24 @@ import {
   SignOutIcon,
 } from '@primer/octicons-react'
 
-const UserMenu = (props) => {
+const UserMenu = () => {
   const [menu, setMenu] = useState(false)
 
   return (
     <>
-      <div className="float-right mr-10 mt-4 border-2 font-roboto-300">
+      <div className="float-right fixed right-0 mr-10 mt-4 font-roboto-300">
         <div
           onClick={() => setMenu(!menu)}
           className="flex ml-10 cursor-pointer items-center"
         >
-          {props.img !== '' ? (
-            <img alt="avatar" className="mr-2" src={props.img} width={35} />
-          ) : (
-            <img
-              alt="avatar"
-              className="mr-2"
-              src={
-                'https://kredithptangcity.com/wp-content/uploads/2020/11/user.png'
-              }
-              width={35}
-            />
-          )}
+          <img
+            alt="avatar"
+            className="mr-2"
+            src={
+              'https://kredithptangcity.com/wp-content/uploads/2020/11/user.png'
+            }
+            width={35}
+          />
 
           <ChevronDownIcon size={20} fill="#5C5C5C" />
         </div>
@@ -50,7 +46,7 @@ const UserMenu = (props) => {
                 <button>
                   <div className="flex items-center">
                     <SignOutIcon size={16} fill="#5C5C5C" />
-                    <span className="text-sm ml-2">Log out</span>
+                    <span className="text-sm ml-2">Logout</span>
                   </div>
                 </button>
               </li>
