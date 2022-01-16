@@ -6,7 +6,7 @@ import DaftarPertanyaan from '../../UI/organisms/LandingPage/DaftarPertanyaan'
 import Footer from '../../UI/organisms/LandingPage/Footer'
 
 const LandingPage = () => {
-  document.title = 'Home'
+  document.title = 'MyPoints Admin'
   document.body.style = 'background: #FFFFFF;'
 
   return (

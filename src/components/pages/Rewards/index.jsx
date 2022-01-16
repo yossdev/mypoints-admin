@@ -1,9 +1,22 @@
 import { GiftIcon } from '@primer/octicons-react'
 import TableReward from '../../UI/organisms/Rewards/TableRewards'
 
+import MainLoading from '../../UI/atoms/Spinner/MainLoading'
+import Error from '../../UI/organisms/Error'
+
+import { useQuery } from '@apollo/client'
+import { GET_REWARD } from '../../../GraphQL/Query'
+
 const Reward = () => {
   document.title = 'Reward'
   document.body.style = 'background: #EEEEEE;'
+
+  const { data, loading, error } = useQuery(GET_REWARD, {
+    notifyOnNetworkStatusChange: true,
+  })
+
+  if (loading) return <MainLoading />
+  if (error) return <Error />
 
   return (
     <>
@@ -21,7 +34,7 @@ const Reward = () => {
           border: 'red solid 1px',
         }}
       >
-        <TableReward />
+        <TableReward data={data} />
       </div>
     </>
   )

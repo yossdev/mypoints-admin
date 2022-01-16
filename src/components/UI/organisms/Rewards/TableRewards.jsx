@@ -3,7 +3,9 @@ import AddReward from './AddReward'
 import EditReward from './EditReward'
 import DelReward from './DelReward'
 
-const TableReward = () => {
+import gifts from '../../../../assets/gifts.svg'
+
+const TableReward = (props) => {
   const [editReward, setEditReward] = useState(false)
   const [addReward, setAddReward] = useState(false)
   const [delReward, setDelReward] = useState(false)
@@ -41,45 +43,59 @@ const TableReward = () => {
         </thead>
 
         <tbody>
-          <tr className="text-center">
-            <td className=" border-b border-gray-200 bg-white text-sm">
-              <img
-                className="float-right"
-                alt="reward-img"
-                src={
-                  'https://kredithptangcity.com/wp-content/uploads/2020/11/user.png'
-                }
-                width={30}
-              />
-            </td>
+          {props.data.rewards.map((reward) => (
+            <tr className="text-center">
+              <td className=" border-b border-gray-200 bg-white text-sm">
+                {props.data.rewards.img !== '' ? (
+                  <img
+                    alt="gift-img"
+                    src={gifts}
+                    className="rounded-full w-8 h-8 float-right"
+                  />
+                ) : (
+                  <img
+                    alt="gift"
+                    src={reward.img}
+                    className="rounded-full w-8 h-8 float-right"
+                  />
+                )}
+              </td>
 
-            <td className="-pl-6 py-3 border-b border-gray-200 bg-white text-sm">
-              <p className="text-gray-900 whitespace-no-wrap">GoPay 30K</p>
-            </td>
+              <td className="-pl-6 py-3 border-b border-gray-200 bg-white text-sm">
+                <p className="text-gray-900 whitespace-no-wrap">
+                  {reward.title}
+                </p>
+              </td>
 
-            <td className="py-3 border-b border-gray-200 bg-white text-sm">
-              <p className="text-gray-900 whitespace-no-wrap">30000</p>
-            </td>
+              <td className="py-3 border-b border-gray-200 bg-white text-sm">
+                <p className="text-gray-900 whitespace-no-wrap">
+                  {/* TODO value ga mau muncul */}
+                  {reward.value}
+                </p>
+              </td>
 
-            <td className="py-3 border-b border-gray-200 bg-white text-sm">
-              <p className="text-gray-900 whitespace-no-wrap">120</p>
-            </td>
+              <td className="py-3 border-b border-gray-200 bg-white text-sm">
+                <p className="text-gray-900 whitespace-no-wrap">
+                  {reward.points}
+                </p>
+              </td>
 
-            <td className="py-3 border-b border-gray-200 bg-white text-sm">
-              <span
-                onClick={() => setEditReward(true)}
-                className="font-semibold text-darkgrey hover:bg-lightpurple rounded-full cursor-pointer p-2 mr-4"
-              >
-                Edit
-              </span>
-              <span
-                onClick={() => setDelReward(true)}
-                className="font-semibold text-red hover:bg-lightpurple rounded-full cursor-pointer p-2"
-              >
-                Hapus
-              </span>
-            </td>
-          </tr>
+              <td className="py-3 border-b border-gray-200 bg-white text-sm">
+                <span
+                  onClick={() => setEditReward(true)}
+                  className="font-semibold text-darkgrey hover:bg-lightpurple rounded-full cursor-pointer p-2 mr-4"
+                >
+                  Edit
+                </span>
+                <span
+                  onClick={() => setDelReward(true)}
+                  className="font-semibold text-red hover:bg-lightpurple rounded-full cursor-pointer p-2"
+                >
+                  Hapus
+                </span>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
 

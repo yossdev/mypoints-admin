@@ -1,9 +1,21 @@
 import { PersonIcon } from '@primer/octicons-react'
 import TableAgent from '../../UI/organisms/Agents/TableAgent'
+import MainLoading from '../../UI/atoms/Spinner/MainLoading'
+import Error from '../../UI/organisms/Error'
+
+import { useQuery } from '@apollo/client'
+import { GET_AGENT } from '../../../GraphQL/Query'
 
 const Agents = () => {
   document.title = 'Agents'
   document.body.style = 'background: #EEEEEE;'
+
+  const { data, loading, error } = useQuery(GET_AGENT, {
+    notifyOnNetworkStatusChange: true,
+  })
+
+  if (loading) return <MainLoading />
+  if (error) return <Error />
 
   return (
     <>
@@ -21,7 +33,7 @@ const Agents = () => {
           border: 'red solid 1px',
         }}
       >
-        <TableAgent />
+        <TableAgent data={data} />
       </div>
     </>
   )
