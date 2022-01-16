@@ -7,6 +7,7 @@ import Footer from '../../UI/organisms/LandingPage/Footer'
 
 const LandingPage = () => {
   document.title = 'Home'
+  document.body.style = 'background: #FFFFFF;'
 
   return (
     <>

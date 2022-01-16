@@ -14,7 +14,7 @@ import Transactions from './components/pages/Transactions'
 
 import Profile from './components/pages/Profile'
 
-// import PrivateRoute from './components/private/PrivateRoute'
+import PrivateRoute from './components/private/PrivateRoute'
 
 import NotFound from './components/pages/NotFound'
 
@@ -28,16 +28,16 @@ const App = () => {
         <Route path="register" element={<Register />} />
 
         {/* Private */}
-        {/* <Route element={<PrivateRoute />}> */}
-        <Route element={<DashboardLayout />}>
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="agent" element={<Agent />} />
-          <Route path="product" element={<Product />} />
-          <Route path="reward" element={<Reward />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="transaction" element={<Transactions />} />
+        <Route element={<PrivateRoute />}>
+          <Route element={<DashboardLayout />}>
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="agent" element={<Agent />} />
+            <Route path="product" element={<Product />} />
+            <Route path="reward" element={<Reward />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="transaction" element={<Transactions />} />
+          </Route>
         </Route>
-        {/* </Route> */}
 
         <Route path="*" element={<NotFound />} />
       </Routes>
