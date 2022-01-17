@@ -1,6 +1,6 @@
-# mypoints-client
+# mypoints-admin
 
-Frontend (agent) application for MyPoints WebApp - Final Project Alterra Academy (MBKM)
+Frontend (Admin) application for MyPoints WebApp - Final Project Alterra Academy (MBKM)
 
 ## PPT Project
 
@@ -9,9 +9,16 @@ Frontend (agent) application for MyPoints WebApp - Final Project Alterra Academy
 ## Features
 
 - [x] Login Admin
+- [x] Register Admin
 - [x] Update Profile & Avatar for Admin
+- [x] Create, Update: Agent
+- [x] Create, Update, Delete: Products
+- [x] Create, Update, Delete: Rewards
+- [x] Approve claim points request from Agent
+- [x] Set redeems request from Agent
+- [x] Payment Integration w/ Xendit
 
-## MyPoints Agent tech-stack:
+## MyPoints Admin tech-stack:
 
 - ReactJS
 - TailwindCSS v3
