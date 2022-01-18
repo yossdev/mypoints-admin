@@ -1,5 +1,40 @@
 # mypoints-admin
 
-Frontend application for MyPoints WebApp - Final Project Alterra Academy (MBKM)
+Frontend (Admin) application for MyPoints WebApp - Final Project Alterra Academy (MBKM)
 
-![mypoints-logo-white](https://user-images.githubusercontent.com/40724858/147229220-40cc2bd0-c1c7-430d-a96f-eca70605d436.png)
+## PPT Project
+
+[MyPointsPPT](https://docs.google.com/presentation/d/1CknmZ4wCH17ST1ViROIu_vEyyxy4VZTl32VclzEOhjM/edit?usp=sharing)
+
+## Features
+
+- [x] Login Admin
+- [x] Register Admin
+- [x] Update Profile & Avatar for Admin
+- [x] Create, Update: Agent
+- [x] Create, Update, Delete: Products
+- [x] Create, Update, Delete: Rewards
+- [x] Approve claim points request from Agent
+- [x] Set redeems request from Agent
+- [x] Payment Integration w/ Xendit
+
+## MyPoints Admin tech-stack:
+
+- ReactJS
+- TailwindCSS v3
+- React-router-dom v6
+- React-redux, @reduxjs/toolkit, redux-persist
+- Apollo/GraphQL
+- REST APIs
+
+## Architecture
+Atomic Design
+```
+|-- assets
+|-- components
+|   |-- pages
+|   |-- [UI]
+|       |-- atoms
+|       |-- molecules
+|       |-- organisms
+```

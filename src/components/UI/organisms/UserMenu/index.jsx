@@ -1,5 +1,8 @@
-import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { useState, useRef, useEffect } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { useApolloClient } from '@apollo/client'
+import { useDispatch } from 'react-redux'
+import { signOut } from '../../../../store/slice'
 
 import {
   ChevronDownIcon,
@@ -10,11 +13,41 @@ import {
 const UserMenu = () => {
   const [menu, setMenu] = useState(false)
 
+  const drop = useRef(null)
+
+  const handleClick = (e) => {
+    if (!e.target.closest(`.${drop.current?.className}`) && menu) {
+      setMenu(false)
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('click', handleClick)
+    return () => {
+      document.removeEventListener('click', handleClick)
+    }
+  })
+
+  const handleDropdown = () => {
+    setMenu(!menu)
+  }
+
+  const client = useApolloClient()
+  const dispatch = useDispatch()
+  let navigate = useNavigate()
+
+  const handleSignOut = () => {
+    client.resetStore()
+    dispatch(signOut())
+
+    navigate('/')
+  }
+
   return (
     <>
       <div className="float-right fixed right-0 mr-10 mt-4 font-roboto-300">
         <div
-          onClick={() => setMenu(!menu)}
+          onClick={handleDropdown}
           className="flex ml-10 cursor-pointer items-center"
         >
           <img
@@ -43,7 +76,7 @@ const UserMenu = () => {
               </li>
 
               <li className="flex hover:bg-lightpurple cursor-pointer p-2">
-                <button>
+                <button onClick={handleSignOut}>
                   <div className="flex items-center">
                     <SignOutIcon size={16} fill="#5C5C5C" />
                     <span className="text-sm ml-2">Logout</span>

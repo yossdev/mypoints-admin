@@ -1,9 +1,21 @@
 import { TagIcon } from '@primer/octicons-react'
 import TableProduct from '../../UI/organisms/Products/TableProduct'
+import MainLoading from '../../UI/atoms/Spinner/MainLoading'
+import Error from '../../UI/organisms/Error'
+
+import { useQuery } from '@apollo/client'
+import { GET_PRODUCT } from '../../../GraphQL/Query'
 
 const Product = () => {
   document.title = 'Product'
   document.body.style = 'background: #EEEEEE;'
+
+  const { data, loading, error } = useQuery(GET_PRODUCT, {
+    notifyOnNetworkStatusChange: true,
+  })
+
+  if (loading) return <MainLoading />
+  if (error) return <Error />
 
   return (
     <>
@@ -18,10 +30,9 @@ const Product = () => {
           width: '80%',
           padding: '20px',
           float: 'right',
-          border: 'red solid 1px',
         }}
       >
-        <TableProduct />
+        <TableProduct data={data} />
       </div>
     </>
   )

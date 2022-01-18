@@ -1,21 +1,30 @@
-import logo from '../../../assets/logo.svg'
 import axios from 'axios'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 
-const baseURL = 'https://server.mypoints.site/api/v1/admin/login'
+import logo from '../../../assets/logo.svg'
+
+import { useDispatch } from 'react-redux'
+import { isAuthenticated, storeJwt } from '../../../store/slice'
+import { store } from '../../../store/store'
+
+import MainLoading from '../../UI/atoms/Spinner/MainLoading'
+
+const api = 'https://server.mypoints.site/api/v1/admin/login'
 
 const Login = () => {
   document.title = 'Login'
 
-  const dataLogin = {
+  const payload = {
     email: '',
     password: '',
   }
-  const navigate = useNavigate()
-  const [reqBody, setReqBody] = useState(dataLogin)
+
+  const [reqBody, setReqBody] = useState(payload)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState()
+
+  const dispatch = useDispatch()
 
   const handleChange = (e) => {
     const value = e.target.value
@@ -29,10 +38,14 @@ const Login = () => {
     e.preventDefault()
     setLoading(true)
     axios
-      .post(baseURL, reqBody)
+      .post(api, reqBody)
       .then(function (response) {
         // dispatch redux untuk simpan jwt access token
-        console.log('berhasil login', response.data.data)
+        const accessToken = response.data.data.access_token
+        dispatch(storeJwt(accessToken))
+        dispatch(isAuthenticated(true))
+
+        console.log('berhasil login', accessToken)
       })
       .catch(function (err) {
         setError(err)
@@ -40,12 +53,29 @@ const Login = () => {
       })
       .finally(() => {
         setLoading(false)
-        navigate('/dashboard')
       })
   }
 
-  if (loading) return <h1>loading...</h1>
-  // if (error) return <h1>error...</h1>
+  const s = store.getState()
+  let navigate = useNavigate()
+  let location = useLocation()
+
+  let from = location.state?.from?.pathname || '/dashboard'
+
+  // for redirect after successful login, using useEffect is not the best approach but it works for now
+  useEffect(() => {
+    if (!loading && s.store.isAuthenticated) {
+      // Send them back to the page they tried to visit when they were
+      // redirected to the login page. Use { replace: true } so we don't create
+      // another entry in the history stack for the login page.  This means that
+      // when they get to the protected page and click the back button, they
+      // won't end up back on the login page, which is also really nice for the
+      // user experience.
+      navigate(from, { replace: true })
+    }
+  })
+
+  if (loading) return <MainLoading />
 
   return (
     <div className="h-screen bg-purple flex items-center font-Roboto">

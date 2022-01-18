@@ -1,15 +1,30 @@
 import { PersonIcon } from '@primer/octicons-react'
 import Admin from '../../UI/organisms/Profile'
 
+import MainLoading from '../../UI/atoms/Spinner/MainLoading'
+import Error from '../../UI/organisms/Error'
+
+import { useQuery } from '@apollo/client'
+import { GET_ADMIN } from '../../../GraphQL/Query'
+
 const Profile = () => {
   document.title = 'Profile'
   document.body.style = 'background: #EEEEEE;'
 
+  const { data, loading, error } = useQuery(GET_ADMIN, {
+    notifyOnNetworkStatusChange: true,
+  })
+
+  if (loading) return <MainLoading />
+  if (error) return <Error />
+
+  const admin = data.admins[0]
+
   return (
     <>
       <div className="ml-80 pt-3 font-roboto">
-        <PersonIcon size={16} fill="darkgrey" />
-        <span className="text-lg text-darkgrey font-bold">/ Profile</span>
+        <PersonIcon size={20} fill="#5C5C5C" />
+        <span className="text-lg text-darkgrey font-bold"> Profile</span>
       </div>
 
       <div
@@ -23,7 +38,7 @@ const Profile = () => {
         }}
       >
         <div className="mx-auto">
-          <Admin />
+          <Admin admin={admin} />
         </div>
       </div>
     </>
