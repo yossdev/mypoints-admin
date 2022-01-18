@@ -31,7 +31,6 @@ const Reward = () => {
           width: '80%',
           padding: '20px',
           float: 'right',
-          border: 'red solid 1px',
         }}
       >
         <TableReward data={data} />

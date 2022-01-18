@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client'
 
 const GET_ADMIN = gql`
-  query MyQuery {
+  query Admin {
     admins {
       id
       img
@@ -41,6 +41,7 @@ const GET_REWARD = gql`
       img
       title
       points
+      value
     }
   }
 `

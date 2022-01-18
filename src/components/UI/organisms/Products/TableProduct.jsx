@@ -3,6 +3,8 @@ import AddProduct from './AddProduct'
 import EditProduct from './EditProduct'
 import DelProduct from './DelProduct'
 
+import gifts from '../../../../assets/gifts.svg'
+
 const TableProduct = (props) => {
   const [editProduct, setEditProduct] = useState(false)
   const [addProduct, setAddProduct] = useState(false)
@@ -20,6 +22,8 @@ const TableProduct = (props) => {
       <table className="w-full float-right shadow-lg font-roboto">
         <thead>
           <tr>
+            <th className="py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase"></th>
+
             <th className="py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase">
               NAMA PRODUK
             </th>
@@ -37,6 +41,22 @@ const TableProduct = (props) => {
         <tbody>
           {props.data.products.map((product) => (
             <tr className="text-center">
+              <td className="py-3 border-b border-gray-200 bg-white text-sm">
+                {props.data.products.img !== '' ? (
+                  <img
+                    alt="product"
+                    src={product.img}
+                    className="w-8 h-8 float-right"
+                  />
+                ) : (
+                  <img
+                    alt="product"
+                    src={gifts}
+                    className="w-8 h-8 float-right"
+                  />
+                )}
+              </td>
+
               <td className="py-3 border-b border-gray-200 bg-white text-sm">
                 <p className="text-gray-900 whitespace-no-wrap">
                   {product.title}
