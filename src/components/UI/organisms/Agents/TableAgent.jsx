@@ -107,9 +107,6 @@ const TableAgent = (props) => {
                 >
                   Edit
                 </span>
-                <span className="font-semibold text-red hover:bg-lightpurple rounded-full cursor-pointer p-2">
-                  Hapus
-                </span>
               </td>
             </tr>
           ))}
