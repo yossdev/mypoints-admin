@@ -49,7 +49,7 @@ const EditProfile = (props) => {
             className="block mb-2 text-sm font-bold text-purple font-roboto"
             htmlFor="email"
           >
-            Nama Agen
+            Nama Admin
           </label>
           <input
             name="name"

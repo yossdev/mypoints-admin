@@ -1,3 +1,5 @@
+import user from '../../../../assets/user.png'
+
 import { useState } from 'react'
 import EditProfile from './EditProfile'
 import axios from 'axios'
@@ -133,7 +135,7 @@ const Profile = (props) => {
         className="rounded-lg overflow-hidden shadow-lg bg-white font-roboto"
       >
         <div className="flex justify-center mt-10">
-          {props.img !== '' ? (
+          {props.admin.img !== '' ? (
             <img
               alt="avatar"
               src={props.admin.img}
@@ -142,7 +144,7 @@ const Profile = (props) => {
           ) : (
             <img
               alt="avatar"
-              src="https://kredithptangcity.com/wp-content/uploads/2020/11/user.png"
+              src={user}
               className="rounded-full w-28 h-28 -mt-3"
             />
           )}
