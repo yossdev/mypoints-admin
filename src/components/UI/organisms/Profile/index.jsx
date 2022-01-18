@@ -2,9 +2,9 @@ import { useState } from 'react'
 
 import EditProfile from './EditProfile'
 
-const Profile = () => {
-  //   const name =
-  //     props.agent.name.charAt(0).toUpperCase() + props.agent.name.slice(1)
+const Profile = (props) => {
+  const name =
+    props.admin.name.charAt(0).toUpperCase() + props.admin.name.slice(1)
 
   const [editProfile, setEditProfile] = useState(false)
   const [editPhoto, setEditPhoto] = useState(false)
@@ -16,36 +16,38 @@ const Profile = () => {
         className="rounded-lg overflow-hidden shadow-lg bg-white"
       >
         <div className="flex justify-center mt-8">
-          {/* {props.img !== '' ? (
+          {props.img === '' ? (
             <img
               alt="avatar"
-              src={props.agent.img}
-              className="rounded-full border-solid border-white border-2 -mt-3"
+              src={props.admin.img}
+              className="rounded-full w-28 h-28 -mt-3"
             />
           ) : (
             <img
               alt="avatar"
               src="https://kredithptangcity.com/wp-content/uploads/2020/11/user.png"
-              className="rounded-full border-solid border-white border-2 mt-3 max-h-36"
+              className="rounded-full w-28 h-28 mt-3 max-h-36"
             />
-          )} */}
+          )}
         </div>
 
         <div className="text-center px-3 pb-6 pt-2">
-          <h3 className="text-2xl text-purple bold font-roboto">Nama Admin</h3>
-          <h3 className="text-2xl text-purple bold font-roboto">Blablabla</h3>
+          <h3 className="text-2xl text-purple bold font-roboto">{name}</h3>
+          <h3 className="text-2xl text-purple bold font-roboto">
+            {props.admin.email}
+          </h3>
         </div>
 
         <div className="border-t-2 py-3">
           <p
-            onClick={() => setEditPhoto(!editPhoto)}
+            onClick={() => setEditPhoto(true)}
             className="bg-white mx-auto w-1/2 text-center hover:bg-lightpurple text-purple text-sm font-roboto py-3 px-3 rounded-md cursor-pointer"
           >
             Upload Foto
           </p>
 
           <p
-            onClick={() => setEditProfile(!editProfile)}
+            onClick={() => setEditProfile(true)}
             className="bg-white mx-auto w-1/2 text-center hover:bg-lightpurple text-purple text-sm font-roboto py-3 px-3 rounded-md cursor-pointer"
           >
             Edit Profile
@@ -54,11 +56,29 @@ const Profile = () => {
 
         {/* TODO */}
         {editPhoto ? (
-          <div className="flex justify-center py-3 border-t">
-            <div className="text-center inline-block">
-              <input type="file" />
+          <form className="mx-auto text-center items-center justify-center mb-4 border-t-2 rounded">
+            <div>
+              <input
+                className="w-full ml-16 mt-4 h-10 text-sm"
+                type="file"
+                accept=".jpg, .jpeg, .png"
+              />
             </div>
-          </div>
+
+            <button
+              type="submit"
+              className="bg-purple hover:bg-darkpurple text-white text-sm font-roboto py-3 px-4 mr-4 rounded-md"
+            >
+              Upload Foto
+            </button>
+
+            <button
+              onClick={() => setEditPhoto(false)}
+              className="bg-white hover:bg-lightpurple text-red text-sm font-roboto py-3 px-4 rounded-md"
+            >
+              Batal
+            </button>
+          </form>
         ) : null}
       </div>
 

@@ -69,6 +69,23 @@ const EditProfile = () => {
             />
           </div>
         ) : null}
+
+        <div className="flex justify-center pt-7 pb-2 border-t">
+          <div className="text-center mr-6">
+            <button
+              type="submit"
+              className="bg-purple hover:bg-darkpurple text-white text-sm font-roboto py-3 px-4 rounded-md"
+            >
+              Update Profile
+            </button>
+          </div>
+
+          <div className="text-center mr-6">
+            <button className="bg-white hover:bg-lightpurple text-red text-sm font-roboto py-3 px-4 rounded-md">
+              Batal
+            </button>
+          </div>
+        </div>
       </form>
     </div>
   )
