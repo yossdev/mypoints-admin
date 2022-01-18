@@ -78,7 +78,7 @@ const Login = () => {
   if (loading) return <MainLoading />
 
   return (
-    <div className="h-screen bg-purple flex items-center font-Roboto">
+    <div className="h-screen bg-purple flex items-center font-roboto">
       <div className="mx-auto space-y-6 bg-white shadow-md border border-white rounded-lg sm:px-10 sm:pb-8">
         <form
           method="post"
@@ -91,14 +91,13 @@ const Login = () => {
           <h3 className="text-xl font-medium text-purple">
             Selamat Datang Para Admin
           </h3>
-          {error && <h1>Gagal Login...</h1>}
 
           <div>
             <label
               htmlFor="email"
               className="text-sm font-medium text-purple block mb-2"
             >
-              Your email
+              e-mail
             </label>
             <input
               type="email"
@@ -116,7 +115,7 @@ const Login = () => {
               htmlFor="password"
               className="text-sm font-medium text-purple block mb-2"
             >
-              Your password
+              password
             </label>
 
             <input
@@ -129,6 +128,12 @@ const Login = () => {
               required
             />
           </div>
+
+          {error && (
+            <div className="text-sm text-center text-red italic">
+              Email atau Password salah, silahkan coba lagi!
+            </div>
+          )}
 
           <button
             type="submit"
