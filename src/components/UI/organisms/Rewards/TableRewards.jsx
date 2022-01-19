@@ -1,24 +1,8 @@
-import { useState } from 'react'
-import AddReward from './AddReward'
-import EditReward from './EditReward'
-import DelReward from './DelReward'
+import hadiah from '../../../../assets/gifts.svg'
 
-import gifts from '../../../../assets/gifts.svg'
-
-const TableReward = (props) => {
-  const [editReward, setEditReward] = useState(false)
-  const [addReward, setAddReward] = useState(false)
-  const [delReward, setDelReward] = useState(false)
-
+const TableReward = ({ data, handleClickEdit, handleClickHapus }) => {
   return (
     <div className="font-roboto">
-      <button
-        onClick={() => setAddReward(true)}
-        className="mb-3 mr-4 border-2 bg-purple hover:bg-darkpurple text-sm text-white font-roboto p-3 rounded-md"
-      >
-        + Tambah Reward
-      </button>
-
       <table className="w-full float-right shadow-lg font-roboto">
         <thead>
           <tr>
@@ -43,20 +27,20 @@ const TableReward = (props) => {
         </thead>
 
         <tbody>
-          {props.data.rewards.map((reward) => (
-            <tr className="text-center">
+          {data.rewards.map((reward) => (
+            <tr key={reward.id} className="text-center">
               <td className=" border-b border-gray-200 bg-white text-sm">
-                {props.data.rewards.img !== '' ? (
+                {data.rewards.img !== '' ? (
                   <img
                     alt="gift-img"
-                    src={gifts}
-                    className="rounded-full w-8 h-8 float-right"
+                    src={reward.img}
+                    className="w-8 h-8 float-right"
                   />
                 ) : (
                   <img
                     alt="gift"
-                    src={reward.img}
-                    className="rounded-full w-8 h-8 float-right"
+                    src={hadiah}
+                    className="w-8 h-8 float-right"
                   />
                 )}
               </td>
@@ -82,13 +66,13 @@ const TableReward = (props) => {
 
               <td className="py-3 border-b border-gray-200 bg-white text-sm">
                 <span
-                  onClick={() => setEditReward(true)}
+                  onClick={() => handleClickEdit(reward.id)}
                   className="font-semibold text-darkgrey hover:bg-lightpurple rounded-full cursor-pointer p-2 mr-4"
                 >
                   Edit
                 </span>
                 <span
-                  onClick={() => setDelReward(true)}
+                  onClick={() => handleClickHapus(reward.id)}
                   className="font-semibold text-red hover:bg-lightpurple rounded-full cursor-pointer p-2"
                 >
                   Hapus
@@ -98,10 +82,6 @@ const TableReward = (props) => {
           ))}
         </tbody>
       </table>
-
-      {editReward && <EditReward setEditReward={setEditReward} />}
-      {addReward && <AddReward setAddReward={setAddReward} />}
-      {delReward && <DelReward setDelReward={setDelReward} />}
     </div>
   )
 }

@@ -196,7 +196,6 @@ const Product = () => {
         <BtnAddProduct setAddProduct={setAddProduct} />
         <TableProduct
           data={data}
-          refetch={refetch}
           handleClickEdit={handleClickEdit}
           handleClickHapus={handleClickHapus}
         />
