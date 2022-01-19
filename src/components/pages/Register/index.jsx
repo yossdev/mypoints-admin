@@ -48,7 +48,7 @@ const Register = () => {
   // if (error) return <h1>error...</h1>
 
   return (
-    <div className="h-screen bg-purple flex items-center font-Roboto">
+    <div className="h-screen bg-purple flex items-center font-roboto">
       <div className="mx-auto space-y-6 bg-white shadow-md border border-white rounded-lg sm:px-10 sm:pb-8">
         <form
           method="post"

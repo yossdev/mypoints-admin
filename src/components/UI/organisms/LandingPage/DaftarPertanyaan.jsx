@@ -24,7 +24,7 @@ const DaftarPertanyaan = () => {
               >
                 <div className="flex-shrink-0"></div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-Roboto text-purple">Apa itu MyPoints?</p>
+                  <p className="font-roboto text-purple">Apa itu MyPoints?</p>
                 </div>
                 <ChevronDownIcon
                   size={20}
@@ -33,7 +33,7 @@ const DaftarPertanyaan = () => {
                 />
               </div>
               {jawab1 ? (
-                <p className="ml-4 mt-4 font-Roboto font-light text-sm">
+                <p className="ml-4 mt-4 font-roboto font-light text-sm">
                   MyPoints merupakan bentuk apresiasi dari admin kepada para
                   agen. Agen mendapatkan keuntungan dari setiap transaksi dengan
                   mendapatkan saldo MyPoints yang dapat ditukarkan dengan
@@ -49,7 +49,7 @@ const DaftarPertanyaan = () => {
               >
                 <div className="flex-shrink-0"></div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-Roboto text-purple">
+                  <p className="font-roboto text-purple">
                     Apa itu MyPoints Admin?
                   </p>
                 </div>
@@ -60,7 +60,7 @@ const DaftarPertanyaan = () => {
                 />
               </div>
               {jawab2 ? (
-                <p className="ml-4 mt-4 font-Roboto font-light text-sm">
+                <p className="ml-4 mt-4 font-roboto font-light text-sm">
                   Seperti yang dijelaskan sebelumnya. MyPoints Admin adalah
                   website aplikasi yang digunakan admin perusahaan retail yang
                   menjual berbagai produk yang dimana admin dapat mendaftarkan
@@ -78,7 +78,7 @@ const DaftarPertanyaan = () => {
               >
                 <div className="flex-shrink-0"></div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-Roboto text-purple">
+                  <p className="font-roboto text-purple">
                     Bagaimana cara admin memotivasi agen agar penjualan produk
                     meningkat ?
                   </p>
@@ -90,7 +90,7 @@ const DaftarPertanyaan = () => {
                 />
               </div>
               {jawab3 ? (
-                <p className="ml-4 mt-4 font-Roboto font-light text-sm">
+                <p className="ml-4 mt-4 font-roboto font-light text-sm">
                   Caranya mengiming-imingi agen dengan hadiah menarik yang akan
                   diberikan admin, dengan cara tersebut agen dapat
                   berlomba-lomba menjual produk. Yang dimana penjualan produk
