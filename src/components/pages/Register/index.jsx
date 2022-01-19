@@ -68,7 +68,7 @@ const Register = () => {
               htmlFor="username"
               className="text-sm font-medium text-purple block mb-2"
             >
-              Your name
+              Nama Admin
             </label>
             <input
               type="text"
@@ -86,7 +86,7 @@ const Register = () => {
               htmlFor="email"
               className="text-sm font-medium text-purple block mb-2"
             >
-              Your email
+              E-mail
             </label>
             <input
               type="email"
@@ -104,7 +104,7 @@ const Register = () => {
               htmlFor="password"
               className="text-sm font-medium text-purple block mb-2"
             >
-              Your password
+              Password
             </label>
 
             <input

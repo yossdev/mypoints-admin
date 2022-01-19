@@ -11,7 +11,7 @@ const Profile = () => {
   document.title = 'Profile'
   document.body.style = 'background: #EEEEEE;'
 
-  const { data, loading, error } = useQuery(GET_ADMIN, {
+  const { data, loading, error, refetch } = useQuery(GET_ADMIN, {
     notifyOnNetworkStatusChange: true,
   })
 
@@ -38,7 +38,7 @@ const Profile = () => {
         }}
       >
         <div className="mx-auto">
-          <Admin admin={admin} />
+          <Admin admin={admin} refetch={refetch} />
         </div>
       </div>
     </>

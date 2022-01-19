@@ -1,3 +1,5 @@
+import user from '../../../../assets/user.png'
+
 import { useState, useRef, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useApolloClient } from '@apollo/client'
@@ -10,7 +12,7 @@ import {
   SignOutIcon,
 } from '@primer/octicons-react'
 
-const UserMenu = () => {
+const UserMenu = (props) => {
   const [menu, setMenu] = useState(false)
 
   const drop = useRef(null)
@@ -50,14 +52,15 @@ const UserMenu = () => {
           onClick={handleDropdown}
           className="flex ml-10 cursor-pointer items-center"
         >
-          <img
-            alt="avatar"
-            className="mr-2"
-            src={
-              'https://kredithptangcity.com/wp-content/uploads/2020/11/user.png'
-            }
-            width={35}
-          />
+          {props.admin.img !== '' ? (
+            <img
+              alt="avatar"
+              src={props.admin.img}
+              className="rounded-full w-10 h-10"
+            />
+          ) : (
+            <img alt="avatar" src={user} className="rounded-full w-10 h-10" />
+          )}
 
           <ChevronDownIcon size={20} fill="#5C5C5C" />
         </div>
