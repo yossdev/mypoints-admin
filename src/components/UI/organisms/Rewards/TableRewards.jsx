@@ -30,7 +30,7 @@ const TableReward = ({ data, handleClickEdit, handleClickHapus }) => {
           {data.rewards.map((reward) => (
             <tr key={reward.id} className="text-center">
               <td className=" border-b border-gray-200 bg-white text-sm">
-                {data.rewards.img !== '' ? (
+                {reward.img !== '' ? (
                   <img
                     alt="gift-img"
                     src={reward.img}

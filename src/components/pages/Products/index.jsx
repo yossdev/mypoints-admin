@@ -147,13 +147,26 @@ const Product = () => {
       })
   }
 
-  const handleSubmitEditProduct = (e) => {
+  const handleSubmitEditProduct = async (e) => {
     e.preventDefault()
 
+    let cld
+    if (image !== '') {
+      try {
+        cld = await cloudinary()
+      } catch (err) {
+        setErrorAxios(err)
+      }
+    }
+
     axios
-      .put(apiEditProduct, reqProduct, {
-        headers: { Authorization: `Bearer ${JWT.token}` },
-      })
+      .put(
+        apiEditProduct,
+        { ...reqProduct, img: cld?.data.url },
+        {
+          headers: { Authorization: `Bearer ${JWT.token}` },
+        }
+      )
       .then((resp) => refetch())
       .catch((err) => setErrorAxios(err))
       .finally(() => {
@@ -216,6 +229,7 @@ const Product = () => {
         <EditProduct
           setEditProduct={setEditProduct}
           reqProduct={reqProduct}
+          handleImg={handleImg}
           onChangeEditProduct={onChangeEditProduct}
           handleSubmitEditProduct={handleSubmitEditProduct}
           error={error}

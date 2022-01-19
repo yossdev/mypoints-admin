@@ -1,11 +1,9 @@
-import React from 'react'
-
 const EditProduct = (props) => {
   const {
     setEditProduct,
     reqProduct,
     onChangeEditProduct,
-    // handleImg,
+    handleImg,
     handleSubmitEditProduct,
     error,
   } = props
@@ -50,7 +48,7 @@ const EditProduct = (props) => {
             </label>
             <input
               className="font-light text-sm"
-              // onChange={handleImg}
+              onChange={handleImg}
               type="file"
               accept=".jpg, .jpeg, .png"
             />

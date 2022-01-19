@@ -32,7 +32,7 @@ const Reward = () => {
   const JWT = useJwtDecode()
   const adminId = JWT.decoded.sub
   const apiAddReward = `https://server.mypoints.site/api/v1/reward/${adminId}`
-  const apiEditReward = `https://server.mypoints.site/api/v1/product/${adminId}/${rewardID}`
+  const apiEditReward = `https://server.mypoints.site/api/v1/reward/${adminId}/${rewardID}`
   const apiDeleteReward = `https://server.mypoints.site/api/v1/reward/${adminId}/${rewardID}`
 
   const rewardBody = {
