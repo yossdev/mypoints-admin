@@ -1,20 +1,6 @@
-import { useState } from 'react'
-import EditAgent from './EditAgent'
-import AddAgent from './AddAgent'
-
-const TableAgent = (props) => {
-  const [edit, setEdit] = useState(false)
-  const [addAgent, setAddAgent] = useState(false)
-
+const TableAgent = ({ data, handleClickEdit }) => {
   return (
     <div className="font-roboto">
-      <button
-        onClick={() => setAddAgent(true)}
-        className="mb-3 mr-4 border-2 bg-purple hover:bg-darkpurple text-sm text-white font-roboto p-3 rounded-md"
-      >
-        + Tambah Agent
-      </button>
-
       <table className="w-full float-right shadow-lg font-roboto">
         <thead>
           <tr>
@@ -43,11 +29,11 @@ const TableAgent = (props) => {
         </thead>
 
         <tbody>
-          {props.data.agents.map((agent) => (
-            <tr className="text-center">
+          {data.agents.map((agent) => (
+            <tr key={agent.id} className="text-center">
               <td className="py-3 border-b border-gray-200 bg-white text-sm">
                 <span className="text-gray-900 whitespace-no-wrap">
-                  {props.data.agents.img !== '' ? (
+                  {data.agents.img !== '' ? (
                     <img
                       alt="avatar"
                       src={agent.img}
@@ -86,15 +72,15 @@ const TableAgent = (props) => {
                   <span
                     aria-hidden
                     className={
-                      agent.active === 'true'
-                        ? 'absolute inset-0 opacity-50 bg-red rounded-full'
-                        : 'absolute inset-0 opacity-50 bg-green rounded-full'
+                      agent.active
+                        ? 'inset-0 opacity-70 bg-green rounded-full'
+                        : 'inset-0 opacity-70 bg-red rounded-full'
                     }
                   >
-                    {agent.active === 'true' ? (
-                      <span className="relative">Non-active</span>
-                    ) : (
+                    {agent.active ? (
                       <span className="relative">Active</span>
+                    ) : (
+                      <span className="relative">Non-active</span>
                     )}
                   </span>
                 </span>
@@ -102,7 +88,7 @@ const TableAgent = (props) => {
 
               <td className="py-3 border-b border-gray-200 bg-white text-sm">
                 <span
-                  onClick={() => setEdit(true)}
+                  onClick={() => handleClickEdit(agent.id)}
                   className="font-semibold text-darkgrey hover:bg-lightpurple rounded-full cursor-pointer p-2 mr-4"
                 >
                   Edit
@@ -112,9 +98,6 @@ const TableAgent = (props) => {
           ))}
         </tbody>
       </table>
-
-      {edit && <EditAgent setEdit={setEdit} />}
-      {addAgent && <AddAgent setAddAgent={setAddAgent} />}
     </div>
   )
 }

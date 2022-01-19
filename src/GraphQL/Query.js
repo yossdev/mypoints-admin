@@ -19,6 +19,7 @@ const GET_AGENT = gql`
       email
       img
       points
+      active
     }
   }
 `
