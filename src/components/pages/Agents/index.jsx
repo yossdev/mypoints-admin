@@ -46,13 +46,22 @@ const Agents = () => {
     password: '',
   }
 
+  const inputPassword = {
+    password: '',
+    confirmPassword: '',
+  }
+
+  const [pass, setPass] = useState(inputPassword)
+
   const [reqAgent, setReqAgent] = useState(AddAgentBody)
   const [reqEditAgent, setReqEditAgent] = useState(EditAgentBody)
   const [errorAxios, setErrorAxios] = useState()
+  const [loadingAxios, setLoadingAxios] = useState(false)
 
   const onChangeAgent = (e) => {
     const value = e.target.value
     setReqAgent({ ...reqAgent, [e.target.name]: value })
+    setPass({ ...pass, [e.target.name]: value })
   }
 
   const onChangeEditAgent = (e) => {
@@ -63,6 +72,8 @@ const Agents = () => {
     } else {
       setReqEditAgent({ ...reqEditAgent, [e.target.name]: value })
     }
+
+    setPass({ ...pass, [e.target.name]: value })
   }
 
   const handleClickEdit = (agentId) => {
@@ -81,9 +92,10 @@ const Agents = () => {
 
   const handleSubmitAddAgent = (e) => {
     e.preventDefault()
+    setLoadingAxios(true)
 
     axios
-      .post(apiAddAgent, reqEditAgent, {
+      .post(apiAddAgent, reqAgent, {
         headers: { Authorization: `Bearer ${JWT.token}` },
       })
       .then((resp) => {
@@ -93,11 +105,13 @@ const Agents = () => {
       .catch((err) => setErrorAxios(err))
       .finally(() => {
         setAddAgent(false)
+        setLoadingAxios(false)
       })
   }
 
   const handleSubmitEditAgent = (e) => {
     e.preventDefault()
+    setLoadingAxios(true)
 
     axios
       .put(apiEditAgent, reqEditAgent, {
@@ -107,10 +121,11 @@ const Agents = () => {
       .catch((err) => setErrorAxios(err))
       .finally(() => {
         setEditAgent(false)
+        setLoadingAxios(false)
       })
   }
 
-  if (loading) return <MainLoading />
+  if (loading || loadingAxios) return <MainLoading />
   if (error) return <Error />
 
   return (
@@ -137,16 +152,19 @@ const Agents = () => {
           reqAgent={reqAgent}
           setAddAgent={setAddAgent}
           onChangeAgent={onChangeAgent}
+          pass={pass}
           handleSubmitAddAgent={handleSubmitAddAgent}
           error={errorAxios}
         />
       )}
       {editAgent && (
         <EditAgent
+          data={data}
           EditAgentBody={EditAgentBody}
           reqEditAgent={reqEditAgent}
           setEdit={setEditAgent}
           onChangeEditAgent={onChangeEditAgent}
+          pass={pass}
           handleSubmitEditAgent={handleSubmitEditAgent}
           error={errorAxios}
         />

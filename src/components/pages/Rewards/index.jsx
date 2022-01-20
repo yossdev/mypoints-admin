@@ -46,6 +46,7 @@ const Reward = () => {
   const [image, setImage] = useState('')
   const [reqReward, setReqReward] = useState(rewardBody)
   const [errorAxios, setErrorAxios] = useState()
+  const [loadingAxios, setLoadingAxios] = useState(false)
 
   const onChangeAddReward = (e) => {
     const value = e.target.value
@@ -128,6 +129,7 @@ const Reward = () => {
 
   const handleSubmitAddReward = async (e) => {
     e.preventDefault()
+    setLoadingAxios(true)
 
     let cld
     if (image !== '') {
@@ -151,11 +153,13 @@ const Reward = () => {
       .finally(() => {
         setReqReward(rewardBody)
         setAddReward(false)
+        setLoadingAxios(false)
       })
   }
 
   const handleSubmitEditReward = async (e) => {
     e.preventDefault()
+    setLoadingAxios(true)
 
     let cld
     if (image !== '') {
@@ -179,11 +183,13 @@ const Reward = () => {
       .finally(() => {
         setReqReward(rewardBody)
         setEditReward(false)
+        setLoadingAxios(false)
       })
   }
 
   const handleDeleteReward = (e) => {
     e.preventDefault()
+    setLoadingAxios(true)
 
     axios
       .delete(apiDeleteReward, {
@@ -193,10 +199,11 @@ const Reward = () => {
       .catch((err) => setErrorAxios(err))
       .finally(() => {
         setDelReward(false)
+        setLoadingAxios(false)
       })
   }
 
-  if (loading) return <MainLoading />
+  if (loading || loadingAxios) return <MainLoading />
   if (error) return <Error />
 
   return (

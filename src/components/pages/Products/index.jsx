@@ -45,6 +45,7 @@ const Product = () => {
   const [image, setImage] = useState('')
   const [reqProduct, setReqProduct] = useState(productBody)
   const [errorAxios, setErrorAxios] = useState()
+  const [loadingAxios, setLoadingAxios] = useState(false)
 
   const onChangeAddProduct = (e) => {
     const value = e.target.value
@@ -121,6 +122,7 @@ const Product = () => {
 
   const handleSubmitAddProduct = async (e) => {
     e.preventDefault()
+    setLoadingAxios(true)
 
     let cld
     if (image !== '') {
@@ -144,11 +146,13 @@ const Product = () => {
       .finally(() => {
         setReqProduct(productBody)
         setAddProduct(false)
+        setLoadingAxios(false)
       })
   }
 
   const handleSubmitEditProduct = async (e) => {
     e.preventDefault()
+    setLoadingAxios(true)
 
     let cld
     if (image !== '') {
@@ -171,11 +175,13 @@ const Product = () => {
       .catch((err) => setErrorAxios(err))
       .finally(() => {
         setEditProduct(false)
+        setLoadingAxios(false)
       })
   }
 
   const handleDeleteProduct = (e) => {
     e.preventDefault()
+    setLoadingAxios(true)
 
     axios
       .delete(apiDeleteProduct, {
@@ -185,10 +191,11 @@ const Product = () => {
       .catch((err) => setErrorAxios(err))
       .finally(() => {
         setDelProduct(false)
+        setLoadingAxios(false)
       })
   }
 
-  if (loading) return <MainLoading />
+  if (loading || loadingAxios) return <MainLoading />
   if (error) return <Error />
 
   return (
@@ -232,7 +239,7 @@ const Product = () => {
           handleImg={handleImg}
           onChangeEditProduct={onChangeEditProduct}
           handleSubmitEditProduct={handleSubmitEditProduct}
-          error={error}
+          error={errorAxios}
         />
       )}
 

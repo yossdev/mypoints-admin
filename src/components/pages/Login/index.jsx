@@ -44,8 +44,6 @@ const Login = () => {
         const accessToken = response.data.data.access_token
         dispatch(storeJwt(accessToken))
         dispatch(isAuthenticated(true))
-
-        console.log('berhasil login', accessToken)
       })
       .catch(function (err) {
         setError(err)
@@ -80,12 +78,7 @@ const Login = () => {
   return (
     <div className="h-screen bg-purple flex items-center font-roboto">
       <div className="mx-auto space-y-6 bg-white shadow-md border border-white rounded-lg sm:px-10 sm:pb-8">
-        <form
-          method="post"
-          className="space-y-6"
-          action="#"
-          onSubmit={handleLogin}
-        >
+        <form method="post" className="space-y-6" onSubmit={handleLogin}>
           <img className="ml-8" alt="logo" src={logo} width={175} />
 
           <h3 className="text-xl font-medium text-purple">
