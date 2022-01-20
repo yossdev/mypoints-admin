@@ -1,4 +1,4 @@
-import gifts from '../../../../assets/gifts.svg'
+import icon from '../../../../assets/product.png'
 
 const TableProduct = ({ data, handleClickEdit, handleClickHapus }) => {
   return (
@@ -26,7 +26,7 @@ const TableProduct = ({ data, handleClickEdit, handleClickHapus }) => {
           {data.products.map((product) => (
             <tr key={product.id} className="text-center">
               <td className="py-3 border-b border-gray-200 bg-white text-sm">
-                {data.products.img !== '' ? (
+                {product.img !== '' ? (
                   <img
                     alt="product"
                     src={product.img}
@@ -35,7 +35,7 @@ const TableProduct = ({ data, handleClickEdit, handleClickHapus }) => {
                 ) : (
                   <img
                     alt="product"
-                    src={gifts}
+                    src={icon}
                     className="w-8 h-8 float-right"
                   />
                 )}

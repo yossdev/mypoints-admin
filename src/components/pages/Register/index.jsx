@@ -44,8 +44,8 @@ const Register = () => {
         navigate('/login')
       })
   }
+
   if (loading) return <h1>loading...</h1>
-  // if (error) return <h1>error...</h1>
 
   return (
     <div className="h-screen bg-purple flex items-center font-roboto">
@@ -117,6 +117,12 @@ const Register = () => {
               required
             />
           </div>
+
+          {error && (
+            <div className="text-sm text-center text-red italic">
+              Terjadi kesalahan, silahkan coba lagi!
+            </div>
+          )}
 
           <button
             type="submit"

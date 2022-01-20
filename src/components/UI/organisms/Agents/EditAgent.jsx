@@ -1,22 +1,12 @@
 const EditAgent = (props) => {
-  const {
-    reqEditAgent,
-    EditAgentBody,
-    setEdit,
-    onChangeEditAgent,
-    handleSubmitEditAgent,
-    error,
-  } = props
+  const { setEdit, onChangeEditAgent, handleSubmitEditAgent, error } = props
 
   return (
     <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none bg-slate-700 bg-opacity-50">
       <div className="mx-auto flex-col items-center my-1 pt-4 px-8 bg-white shadow border border-purple rounded-lg">
-        {/* For Debuging */}
-        <div>{JSON.stringify(reqEditAgent, null, 2)}</div>
-        <div>{JSON.stringify(EditAgentBody, null, 2)}</div>
-
         <form
           onSubmit={handleSubmitEditAgent}
+          method="put"
           className="mx-auto w-full text-center items-center justify-center mb-4 rounded"
         >
           <div className="mb-4">

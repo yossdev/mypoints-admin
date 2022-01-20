@@ -1,22 +1,14 @@
 import React from 'react'
 
 const AddAgent = (props) => {
-  const {
-    reqAgent,
-    setAddAgent,
-    onChangeAddAgent,
-    handleSubmitAddAgent,
-    error,
-  } = props
+  const { setAddAgent, onChangeAddAgent, handleSubmitAddAgent, error } = props
 
   return (
     <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none bg-slate-700 bg-opacity-50">
       <div className="w-2/6 mx-auto flex-col items-center my-1 pt-4 px-8 bg-white shadow border border-purple rounded-lg">
-        {/* For Debuging */}
-        <div>{JSON.stringify(reqAgent, null, 2)}</div>
-
         <form
           onSubmit={handleSubmitAddAgent}
+          method="post"
           className="mx-auto w-full items-center justify-center mb-4 rounded"
         >
           <div className="mb-2">

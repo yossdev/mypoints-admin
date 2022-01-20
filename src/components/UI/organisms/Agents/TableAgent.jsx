@@ -1,3 +1,5 @@
+import user from '../../../../assets/user.png'
+
 const TableAgent = ({ data, handleClickEdit }) => {
   return (
     <div className="font-roboto">
@@ -33,7 +35,7 @@ const TableAgent = ({ data, handleClickEdit }) => {
             <tr key={agent.id} className="text-center">
               <td className="py-3 border-b border-gray-200 bg-white text-sm">
                 <span className="text-gray-900 whitespace-no-wrap">
-                  {data.agents.img !== '' ? (
+                  {agent.img !== '' ? (
                     <img
                       alt="avatar"
                       src={agent.img}
@@ -42,7 +44,7 @@ const TableAgent = ({ data, handleClickEdit }) => {
                   ) : (
                     <img
                       alt="avatar"
-                      src="https://kredithptangcity.com/wp-content/uploads/2020/11/user.png"
+                      src={user}
                       className="rounded-full w-10 h-10 float-right"
                     />
                   )}
