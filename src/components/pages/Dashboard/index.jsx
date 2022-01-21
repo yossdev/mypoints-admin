@@ -1,10 +1,24 @@
 import { HomeIcon } from '@primer/octicons-react'
 
 import Greeting from '../../UI/organisms/Dashboard/Greetings'
+import Summary from '../../UI/organisms/Dashboard/Summary'
+
+// import { useQuery } from '@apollo/client'
+// import { GET_SUMMARY } from '../../../GraphQL/Query'
+
+// import MainLoading from '../../UI/atoms/Spinner/MainLoading'
+// import Error from '../../UI/organisms/Error'
 
 const Dashboard = () => {
   document.title = 'Dashboard'
   document.body.style = 'background: #EEEEEE;'
+
+  // const { data, loading, error } = useQuery(GET_SUMMARY, {
+  //   notifyOnNetworkStatusChange: true,
+  // })
+
+  // if (loading) return <MainLoading />
+  // if (error) return <Error />
 
   return (
     <>
@@ -23,6 +37,7 @@ const Dashboard = () => {
         }}
       >
         <Greeting />
+        <Summary />
       </div>
     </>
   )

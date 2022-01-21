@@ -47,4 +47,31 @@ const GET_REWARD = gql`
   }
 `
 
-export { GET_ADMIN, GET_AGENT, GET_PRODUCT, GET_REWARD }
+const GET_SUMMARY = gql`
+  query Summary {
+    admins {
+      agents_aggregate {
+        aggregate {
+          count
+        }
+      }
+      products_aggregate {
+        aggregate {
+          count
+        }
+      }
+      rewards_aggregate {
+        aggregate {
+          count
+        }
+      }
+    }
+    transactions_aggregate {
+      aggregate {
+        count
+      }
+    }
+  }
+`
+
+export { GET_ADMIN, GET_AGENT, GET_PRODUCT, GET_REWARD, GET_SUMMARY }
