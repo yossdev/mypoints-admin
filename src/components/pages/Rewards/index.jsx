@@ -208,14 +208,14 @@ const Reward = () => {
 
   return (
     <>
-      <div className="ml-80 pt-3 font-roboto">
+      <div className="ml-80 pt-10 font-roboto">
         <GiftIcon size={20} fill="#5C5C5C" />
         <span className="text-lg text-darkgrey font-bold"> Rewards</span>
       </div>
 
       <div
         style={{
-          marginTop: '30px',
+          marginTop: '20px',
           width: '80%',
           padding: '20px',
           float: 'right',
