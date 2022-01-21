@@ -79,8 +79,6 @@ const Agents = () => {
   const handleClickEdit = (agentId) => {
     const agent = data.agents.find((agent) => agent.id === agentId)
 
-    console.log('ini data id', agentId)
-
     setReqEditAgent({
       ...reqEditAgent,
       id: agent.id,

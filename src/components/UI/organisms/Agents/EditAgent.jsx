@@ -3,12 +3,13 @@ const EditAgent = (props) => {
     data,
     setEdit,
     onChangeEditAgent,
+    reqEditAgent,
     pass,
     handleSubmitEditAgent,
     error,
   } = props
 
-  const agent = data.agents
+  console.log('data', data.agents.active)
 
   return (
     <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none bg-slate-700 bg-opacity-50">
@@ -24,6 +25,7 @@ const EditAgent = (props) => {
             </label>
             <select
               onChange={onChangeEditAgent}
+              value={reqEditAgent.active}
               name="active"
               className="w-full h-10 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded"
             >
