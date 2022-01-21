@@ -19,10 +19,10 @@ const CaraDapatPoints = () => {
         <div className="text-center">
           <div className="px-6 py-4">
             <PersonAddIcon size={24} fill="#5F2788" />
-            <div className="font-bold font-Roboto text-purple mt-2 mb-2">
+            <div className="font-bold font-roboto text-purple mt-2 mb-2">
               Mendaftar Agen
             </div>
-            <p className="font-Roboto font-light">
+            <p className="font-roboto font-light">
               Daftarkan agen yang ingin join dalam usahamu.
             </p>
           </div>
@@ -32,10 +32,10 @@ const CaraDapatPoints = () => {
         <div className="text-center">
           <div className="px-6 py-4">
             <ChecklistIcon size={24} fill="#5F2788" />
-            <div className="font-bold font-Roboto text-purple mt-2 mb-2">
+            <div className="font-bold font-roboto text-purple mt-2 mb-2">
               Menambahkan Data Produk
             </div>
-            <p className="font-Roboto font-light">
+            <p className="font-roboto font-light">
               Jika ada produk baru, admin bisa menambahkan produk data produk
               yang akan dijual oleh agen dengan ketentuan poin masing-masing
               produk.
@@ -47,10 +47,10 @@ const CaraDapatPoints = () => {
         <div className="text-center">
           <div className="px-6 py-4">
             <GiftIcon size={24} fill="#5F2788" />
-            <div className="font-bold font-Roboto text-purple mt-2 mb-2">
+            <div className="font-bold font-roboto text-purple mt-2 mb-2">
               Menambahkan data hadiah
             </div>
-            <p className="font-Roboto font-light">
+            <p className="font-roboto font-light">
               Admin dapat menambahkan data hadiah yang bisa agen tukarkan dengan
               poin yang didapatnya.
             </p>
@@ -61,10 +61,10 @@ const CaraDapatPoints = () => {
         <div className="text-center">
           <div className="px-6 py-4">
             <MailIcon size={24} fill="#5F2788" />
-            <div className="font-bold font-Roboto text-purple mt-2 mb-2">
+            <div className="font-bold font-roboto text-purple mt-2 mb-2">
               Mengonfirmasi penukaran hadiah
             </div>
-            <p className="font-Roboto font-light">
+            <p className="font-roboto font-light">
               Admin dapat mengonfirmasi hadiah apa yang ditukarkan oleh agen
               dengan poin yang didapatnya.
             </p>

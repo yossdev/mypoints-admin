@@ -22,7 +22,7 @@ const Greeting = () => {
     >
       <div className="mt-3 ml-3 px-3 pb-6 pt-2">
         <h3 className="text-2xl text-purple font-bold font-roboto">
-          Selamat Datang, {name} Xiaomi (misal)
+          Selamat Datang, {name}
         </h3>
         <p className="mt-2 font-roboto font-light">
           Hallo, semoga harimu menyenangkan ya. Semangat menjadi Admin!

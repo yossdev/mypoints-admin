@@ -1,24 +1,8 @@
-import { useState } from 'react'
-import AddProduct from './AddProduct'
-import EditProduct from './EditProduct'
-import DelProduct from './DelProduct'
+import icon from '../../../../assets/product.png'
 
-import gifts from '../../../../assets/gifts.svg'
-
-const TableProduct = (props) => {
-  const [editProduct, setEditProduct] = useState(false)
-  const [addProduct, setAddProduct] = useState(false)
-  const [delProduct, setDelProduct] = useState(false)
-
+const TableProduct = ({ data, handleClickEdit, handleClickHapus }) => {
   return (
     <div className="font-roboto">
-      <button
-        onClick={() => setAddProduct(true)}
-        className="mb-3 mr-4 border-2 bg-purple hover:bg-darkpurple text-sm text-white font-roboto p-3 rounded-md"
-      >
-        + Tambah Produk
-      </button>
-
       <table className="w-full float-right shadow-lg font-roboto">
         <thead>
           <tr>
@@ -39,10 +23,10 @@ const TableProduct = (props) => {
         </thead>
 
         <tbody>
-          {props.data.products.map((product) => (
-            <tr className="text-center">
+          {data.products.map((product) => (
+            <tr key={product.id} className="text-center">
               <td className="py-3 border-b border-gray-200 bg-white text-sm">
-                {props.data.products.img !== '' ? (
+                {product.img !== '' ? (
                   <img
                     alt="product"
                     src={product.img}
@@ -51,7 +35,7 @@ const TableProduct = (props) => {
                 ) : (
                   <img
                     alt="product"
-                    src={gifts}
+                    src={icon}
                     className="w-8 h-8 float-right"
                   />
                 )}
@@ -71,13 +55,13 @@ const TableProduct = (props) => {
 
               <td className="py-3 border-b border-gray-200 bg-white text-sm">
                 <span
-                  onClick={() => setEditProduct(true)}
+                  onClick={() => handleClickEdit(product.id)}
                   className="font-semibold text-darkgrey hover:bg-lightpurple rounded-full cursor-pointer p-2 mr-4"
                 >
                   Edit
                 </span>
                 <span
-                  onClick={() => setDelProduct(true)}
+                  onClick={() => handleClickHapus(product.id)}
                   className="font-semibold text-red hover:bg-lightpurple rounded-full cursor-pointer p-2"
                 >
                   Hapus
@@ -87,10 +71,6 @@ const TableProduct = (props) => {
           ))}
         </tbody>
       </table>
-
-      {editProduct && <EditProduct setEditProduct={setEditProduct} />}
-      {addProduct && <AddProduct setAddProduct={setAddProduct} />}
-      {delProduct && <DelProduct setDelProduct={setDelProduct} />}
     </div>
   )
 }

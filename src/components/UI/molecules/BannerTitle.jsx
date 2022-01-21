@@ -6,7 +6,7 @@ const BannerTitle = () => {
         Kumpulkan poinnya, <br />
         Dapatkan hadiahnya!!
       </h1>
-      <p className="leading-normal text-md my-8 font-Roboto font-light">
+      <p className="leading-normal text-md my-8 font-roboto font-light">
         MyPoints merupakan bentuk apresiasi dari admin kepada para agen. Agen
         mendapatkan keuntungan dari setiap transaksi dengan mendapatkan saldo
         MyPoints yang dapat ditukarkan dengan berbagai hadiah menarik.

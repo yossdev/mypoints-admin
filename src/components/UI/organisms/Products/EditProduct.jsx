@@ -1,16 +1,29 @@
-import React from 'react'
+const EditProduct = (props) => {
+  const {
+    setEditProduct,
+    reqProduct,
+    onChangeEditProduct,
+    handleImg,
+    handleSubmitEditProduct,
+    error,
+  } = props
 
-const EditProduct = ({ setEditProduct }) => {
   return (
     <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none bg-slate-700 bg-opacity-50">
       <div className="w-2/6 mx-auto flex-col items-center my-1 pt-4 px-8 bg-white shadow border border-purple rounded-lg">
-        <form className="mx-auto w-full items-center justify-center mb-4 rounded">
+        <form
+          onSubmit={handleSubmitEditProduct}
+          method="put"
+          className="mx-auto w-full items-center justify-center mb-4 rounded"
+        >
           <div>
             <label className="block mb-2 text-sm font-bold text-purple font-roboto">
               Nama Produk
             </label>
             <input
-              name="name"
+              name="title"
+              onChange={onChangeEditProduct}
+              value={reqProduct.title}
               className="w-full h-10 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded"
               type="text"
             />
@@ -21,13 +34,33 @@ const EditProduct = ({ setEditProduct }) => {
               Points
             </label>
             <input
-              name="point"
+              value={reqProduct.points}
+              onChange={onChangeEditProduct}
+              name="points"
               className="w-1/3 h-10 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded"
               type="text"
             />
           </div>
 
-          <div className="text-center">
+          <div>
+            <label className="block mb-2 text-sm font-bold text-purple font-roboto">
+              Gambar
+            </label>
+            <input
+              className="font-light text-sm"
+              onChange={handleImg}
+              type="file"
+              accept=".jpg, .jpeg, .png"
+            />
+          </div>
+
+          {error ? (
+            <div className="mt-6 text-sm text-center text-red italic">
+              Terjadi kesalahan, silahkan coba lagi!
+            </div>
+          ) : null}
+
+          <div className="mt-6 text-center">
             <button
               type="submit"
               className="bg-purple hover:bg-darkpurple text-white text-sm font-roboto py-3 px-4 mr-4 rounded-md"
