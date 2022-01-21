@@ -16,7 +16,7 @@ Frontend (Admin) application for MyPoints WebApp - Final Project Alterra Academy
 - [x] Create, Update, Delete: Rewards
 - [x] Approve claim points request from Agent
 - [x] Set redeems request from Agent
-- [x] Payment Integration w/ Xendit
+- [x] Send Benefit w/ Xendit
 
 ## MyPoints Admin tech-stack:
 
@@ -26,9 +26,13 @@ Frontend (Admin) application for MyPoints WebApp - Final Project Alterra Academy
 - React-redux, @reduxjs/toolkit, redux-persist
 - Apollo/GraphQL
 - REST APIs
+- Cloudinary
+- Moment
 
 ## Architecture
+
 Atomic Design
+
 ```
 |-- assets
 |-- components
