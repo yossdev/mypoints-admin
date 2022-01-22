@@ -63,7 +63,7 @@ const Detail = (props) => {
 
                 <button
                   onClick={() => setDetail(false)}
-                  className="bg-white hover:bg-lightpurple text-red text-sm font-roboto py-3 px-4 rounded-md"
+                  className="bg-white hover:bg-lightpurple text-purple text-sm font-roboto py-3 px-4 rounded-md"
                 >
                   Kembali
                 </button>
@@ -80,7 +80,7 @@ const Detail = (props) => {
 
                 <button
                   onClick={() => setDetail(false)}
-                  className="bg-white hover:bg-lightpurple text-red text-sm font-roboto py-3 px-4 rounded-md"
+                  className="bg-white hover:bg-lightpurple text-purple text-sm font-roboto py-3 px-4 rounded-md"
                 >
                   Kembali
                 </button>
@@ -97,7 +97,7 @@ const Detail = (props) => {
 
                 <button
                   onClick={() => setDetail(false)}
-                  className="bg-white hover:bg-lightpurple text-red text-sm font-roboto py-3 px-4 rounded-md"
+                  className="bg-white hover:bg-lightpurple text-purple text-sm font-roboto py-3 px-4 rounded-md"
                 >
                   Kembali
                 </button>
@@ -146,24 +146,65 @@ const Detail = (props) => {
               </div>
             </div>
 
-            <div className="text-center mt-10">
-              <a
-                href={reqDetail.redeem_invoice_url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <button className="bg-purple hover:bg-darkpurple text-white text-sm font-roboto py-3 px-4 mr-4 rounded-md">
-                  Bayar Hadiah
-                </button>
-              </a>
+            {/* LOGIC BUTTON CONDITION BY STATUS */}
+            {reqDetail.status === 'Pending' ? (
+              <div className="text-center mt-6">
+                <div className="my-2 text-md text-purple italic">
+                  Selesaikan transaksi dalam waktu 24 jam!
+                </div>
 
-              <button
-                onClick={() => setDetail(false)}
-                className="bg-white hover:bg-lightpurple text-red text-sm font-roboto py-3 px-4 rounded-md"
-              >
-                Kembali
-              </button>
-            </div>
+                <a
+                  href={reqDetail.redeem_invoice_url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <button className="bg-purple hover:bg-darkpurple text-white text-sm font-roboto py-3 px-4 mr-4 rounded-md">
+                    Bayar Hadiah
+                  </button>
+                </a>
+
+                <button
+                  onClick={() => setDetail(false)}
+                  className="bg-white hover:bg-lightpurple text-purple text-sm font-roboto py-3 px-4 rounded-md"
+                >
+                  Kembali
+                </button>
+              </div>
+            ) : reqDetail.status === 'Settled' ? (
+              <div className="text-center mt-6">
+                <div className="my-2 text-md text-purple italic">
+                  Transaksi selesai!
+                </div>
+
+                <button className="bg-purple opacity-70 text-white text-sm font-roboto py-3 px-4 mr-4 cursor-default rounded-md">
+                  Settled!
+                </button>
+
+                <button
+                  onClick={() => setDetail(false)}
+                  className="bg-white hover:bg-lightpurple text-purple text-sm font-roboto py-3 px-4 rounded-md"
+                >
+                  Kembali
+                </button>
+              </div>
+            ) : (
+              <div className="text-center mt-6">
+                <div className="my-2 text-md text-red italic">
+                  Link pembayaran sudah tidak berlaku!
+                </div>
+
+                <button className="bg-red opacity-70 text-white text-sm font-roboto py-3 px-4 mr-4 cursor-default rounded-md">
+                  Expired!
+                </button>
+
+                <button
+                  onClick={() => setDetail(false)}
+                  className="bg-white hover:bg-lightpurple text-purple text-sm font-roboto py-3 px-4 rounded-md"
+                >
+                  Kembali
+                </button>
+              </div>
+            )}
           </div>
         )}
       </div>
