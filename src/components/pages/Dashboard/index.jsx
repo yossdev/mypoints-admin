@@ -22,7 +22,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="ml-80 pt-3 font-roboto">
+      <div className="ml-80 pt-10 font-roboto">
         <HomeIcon size={20} fill="#5C5C5C" />
         <span className="text-lg text-darkgrey font-bold"> Dashboard</span>
       </div>

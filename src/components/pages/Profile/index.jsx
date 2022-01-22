@@ -22,7 +22,7 @@ const Profile = () => {
 
   return (
     <>
-      <div className="ml-80 pt-3 font-roboto">
+      <div className="ml-80 pt-10 font-roboto">
         <PersonIcon size={20} fill="#5C5C5C" />
         <span className="text-lg text-darkgrey font-bold"> Profile</span>
       </div>
@@ -30,7 +30,7 @@ const Profile = () => {
       <div
         className="mx-auto"
         style={{
-          marginTop: '17px',
+          marginTop: '20px',
           width: '80%',
           float: 'right',
           padding: '20px',
