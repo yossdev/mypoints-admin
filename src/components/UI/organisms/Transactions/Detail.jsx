@@ -1,3 +1,6 @@
+import Zoom from 'react-medium-image-zoom'
+import 'react-medium-image-zoom/dist/styles.css'
+
 const Detail = (props) => {
   const { setDetail, reqDetail, handleApprove, handleReject, error } = props
 
@@ -22,11 +25,13 @@ const Detail = (props) => {
               <label className="block mb-4 text-sm font-bold text-purple font-roboto">
                 Bukti Faktur
               </label>
-              <img
-                alt="faktur"
-                src={reqDetail.nota_img}
-                className="max-w-28 -mt-3"
-              />
+              <Zoom>
+                <img
+                  alt="faktur"
+                  src={reqDetail.nota_img}
+                  className="max-w-28 -mt-3"
+                />
+              </Zoom>
             </div>
 
             <div className="mb-6">

@@ -122,7 +122,6 @@ const Transactions = () => {
           width: '80%',
           padding: '20px',
           float: 'right',
-          border: 'red solid 1px',
         }}
       >
         <TableTrans data={data} handleClickDetail={handleClickDetail} />
