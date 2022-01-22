@@ -28,10 +28,11 @@ Frontend (Admin) application for MyPoints WebApp - Final Project Alterra Academy
 - REST APIs
 - Cloudinary
 - Moment
+- React Medium Image Zoom
 
 ## Architecture
 
-Atomic Design
+Project Structure
 
 ```
 |-- assets
