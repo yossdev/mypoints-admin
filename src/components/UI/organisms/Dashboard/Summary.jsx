@@ -3,7 +3,9 @@ import claim from '../../../../assets/claim.svg'
 import redeem from '../../../../assets/redeem.svg'
 import trans from '../../../../assets/trans.svg'
 
-const Summary = () => {
+const Summary = ({ data }) => {
+  console.log('ini data', data)
+
   return (
     <div className="mb-8 font-roboto">
       <span className="block mb-2 text-xl text-darkgrey font-bold">
@@ -21,7 +23,7 @@ const Summary = () => {
             </p>
             <div className="flex p-3">
               <h3 className="text-4xl mr-5 text-purple font-bold font-poppins">
-                {/* {data.admins.agents_aggregate.aggregate} */}
+                {data.agents_aggregate.aggregate.count}
               </h3>
               <img alt="uang" src={flower} className="w-10 h-10" />
             </div>
@@ -38,9 +40,7 @@ const Summary = () => {
             </p>
             <div className="flex p-3">
               <h3 className="text-4xl mr-5 text-purple font-bold font-poppins">
-                {/* {props.data.claims.aggregate.count +
-                  props.data.redeems.aggregate.count}{' '} */}
-                x
+                {data.products_aggregate.aggregate.count}
               </h3>
               <img alt="uang" src={claim} className="w-10 h-10" />
             </div>
@@ -57,7 +57,7 @@ const Summary = () => {
             </p>
             <div className="flex p-3">
               <span className="text-4xl mr-5 text-purple font-bold font-poppins">
-                {/* {props.data.claims.aggregate.count} x */}
+                {data.rewards_aggregate.aggregate.count}
               </span>
               <img alt="uang" src={redeem} className="w-10 h-10" />
             </div>
@@ -74,7 +74,7 @@ const Summary = () => {
             </p>
             <div className="flex p-3">
               <span className="text-4xl mr-5 text-purple font-bold font-poppins">
-                {/* {props.data.redeems.aggregate.count} x */}
+                {data.transactions_aggregate.aggregate.count}
               </span>
               <img alt="uang" src={trans} className="w-10 h-10" />
             </div>

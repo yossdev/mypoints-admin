@@ -47,23 +47,39 @@ const GET_REWARD = gql`
   }
 `
 
+// const GET_SUMMARY = gql`
+//   query MyQuery {
+//     admins {
+//       agents_aggregate {
+//         aggregate {
+//           count
+//         }
+//       }
+//     }
+//   }
+// `
+
 const GET_SUMMARY = gql`
   query Summary {
-    admins {
-      agents_aggregate {
-        aggregate {
-          count
-        }
+    agents_aggregate(
+      where: { admin_id: { _eq: "e31192d3-1098-4398-b437-8d58655c865c" } }
+    ) {
+      aggregate {
+        count
       }
-      products_aggregate {
-        aggregate {
-          count
-        }
+    }
+    products_aggregate(
+      where: { admin_id: { _eq: "e31192d3-1098-4398-b437-8d58655c865c" } }
+    ) {
+      aggregate {
+        count
       }
-      rewards_aggregate {
-        aggregate {
-          count
-        }
+    }
+    rewards_aggregate(
+      where: { admin_id: { _eq: "e31192d3-1098-4398-b437-8d58655c865c" } }
+    ) {
+      aggregate {
+        count
       }
     }
     transactions_aggregate {
