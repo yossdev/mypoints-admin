@@ -47,7 +47,7 @@ const UserMenu = (props) => {
 
   return (
     <>
-      <div className="float-right mr-10 mt-4 font-roboto-300">
+      <div className="float-right mr-7 mt-7 font-roboto-300">
         <div
           onClick={handleDropdown}
           className="flex ml-10 cursor-pointer items-center"

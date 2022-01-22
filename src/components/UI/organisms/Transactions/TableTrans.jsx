@@ -38,7 +38,7 @@ const TableTrans = ({ data, handleClickDetail }) => {
               <td className="-pl-6 py-3 border-b border-gray-200 bg-white text-sm">
                 <p className="text-gray-900 whitespace-no-wrap">
                   {transaction.type === 'Debit' ? (
-                    <span>Claim Points</span>
+                    <span>Klaim Point</span>
                   ) : (
                     <span>Redeem Hadiah</span>
                   )}
