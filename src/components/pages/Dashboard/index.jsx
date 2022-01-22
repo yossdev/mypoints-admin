@@ -37,7 +37,7 @@ const Dashboard = () => {
         }}
       >
         <Greeting />
-        <Summary data={data} />
+        <Summary summary={data} />
       </div>
     </>
   )
