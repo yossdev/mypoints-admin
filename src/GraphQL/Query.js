@@ -90,4 +90,27 @@ const GET_SUMMARY = gql`
   }
 `
 
-export { GET_ADMIN, GET_AGENT, GET_PRODUCT, GET_REWARD, GET_SUMMARY }
+const GET_TRANSACTION = gql`
+  query Transactions {
+    transactions {
+      id
+      type
+      title
+      points
+      redeem_desc
+      nota_img
+      redeem_invoice_url
+      status
+      created_at
+    }
+  }
+`
+
+export {
+  GET_ADMIN,
+  GET_AGENT,
+  GET_PRODUCT,
+  GET_REWARD,
+  GET_SUMMARY,
+  GET_TRANSACTION,
+}

@@ -72,7 +72,7 @@ const Register = () => {
               htmlFor="username"
               className="text-sm font-medium text-purple block mb-2"
             >
-              Nama Admin
+              Nama Admin <span className="text-red">*</span>
             </label>
             <input
               type="text"
@@ -90,7 +90,7 @@ const Register = () => {
               htmlFor="email"
               className="text-sm font-medium text-purple block mb-2"
             >
-              E-mail
+              E-mail <span className="text-red">*</span>
             </label>
             <input
               type="email"
@@ -108,7 +108,7 @@ const Register = () => {
               htmlFor="password"
               className="text-sm font-medium text-purple block mb-2"
             >
-              Password
+              Password <span className="text-red">*</span>
             </label>
 
             <input
@@ -127,7 +127,7 @@ const Register = () => {
               htmlFor="password"
               className="text-sm font-medium text-purple block mb-2"
             >
-              Confirm Password
+              Confirm Password <span className="text-red">*</span>
             </label>
 
             <input
@@ -141,8 +141,10 @@ const Register = () => {
             />
           </div>
 
+          <div className="mt-4 text-sm text-red italic">* Wajib diisi</div>
+
           {error && (
-            <div className="text-sm text-center text-red italic">
+            <div className="my-4 text-sm text-center text-red italic">
               Terjadi kesalahan, silahkan coba lagi!
             </div>
           )}
