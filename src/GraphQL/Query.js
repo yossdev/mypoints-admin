@@ -47,18 +47,30 @@ const GET_REWARD = gql`
   }
 `
 
+// TODO: BUAT SUMMARY YANG DI DASHBOARD, AKU AWALNYA PAKE QUERY INI, TAPI MALAH REFETCH TERUS, UDAH MEET SAMA MAS YUSQIE JUGA BELOM WORK TADI
 // const GET_SUMMARY = gql`
-//   query MyQuery {
-//     admins {
-//       agents_aggregate {
-//         aggregate {
-//           count
-//         }
+//   query Summary {
+//   admins {
+//     agents_aggregate {
+//       aggregate {
+//         count
+//       }
+//     }
+//     products_aggregate {
+//       aggregate {
+//         count
+//       }
+//     }
+//     rewards_aggregate {
+//       aggregate {
+//         count
 //       }
 //     }
 //   }
+// }
 // `
 
+// TODO: NAH ANEHNYA, KALO PAKE QUERY INI BISA, TAPI MASALAHNYA YA HARUS MANGGIL ADMIN_ID NYA
 const GET_SUMMARY = gql`
   query Summary {
     agents_aggregate(
