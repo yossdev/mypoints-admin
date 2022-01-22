@@ -49,7 +49,7 @@ const EditProfile = (props) => {
             className="block mb-2 text-sm font-bold text-purple font-roboto"
             htmlFor="email"
           >
-            Nama Admin
+            Nama Admin <span className="text-red">*</span>
           </label>
           <input
             name="name"
@@ -63,7 +63,7 @@ const EditProfile = (props) => {
 
         <div className="mb-4">
           <label className="block mb-2 text-sm font-bold text-purple font-roboto">
-            Email
+            Email <span className="text-red">*</span>
           </label>
           <input
             name="email"
@@ -107,6 +107,8 @@ const EditProfile = (props) => {
             />
           </div>
         ) : null}
+
+        <div className="my-2 text-sm text-red italic">* Wajib diisi</div>
 
         <div className="flex justify-center pt-7 pb-2 border-t">
           <div className="text-center mr-6">
