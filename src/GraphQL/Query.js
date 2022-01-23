@@ -78,8 +78,8 @@ const GET_SUMMARY = gql`
 `
 
 const GET_TRANSACTION = gql`
-  query Transactions {
-    transactions {
+  query Transactions($limit: Int!) {
+    transactions(order_by: { updated_at: desc }, limit: $limit) {
       id
       type
       title
@@ -89,6 +89,7 @@ const GET_TRANSACTION = gql`
       redeem_invoice_url
       status
       created_at
+      updated_at
     }
   }
 `

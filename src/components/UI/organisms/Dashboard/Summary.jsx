@@ -1,4 +1,4 @@
-import flower from '../../../../assets/flower.svg'
+import people from '../../../../assets/people.svg'
 import claim from '../../../../assets/claim.svg'
 import redeem from '../../../../assets/redeem.svg'
 import trans from '../../../../assets/trans.svg'
@@ -21,17 +21,26 @@ const Summary = (props) => {
             <p className="my-2 text-sm font-roboto text-darkgrey">
               TOTAL AGENT
             </p>
-            {/* // TODO Stylenya diperbaiki lagi */}
+
             <div className="flex">
-              <div className="grid p-3">
-                <h3 className="text-2xl mr-5 text-purple font-bold font-poppins">
-                  Active: {summary.agents_active.aggregate.count}
-                </h3>
-                <h3 className="text-2xl mr-5 text-purple font-bold font-poppins">
-                  Non-Active: {summary.agents_non_active.aggregate.count}
-                </h3>
+              <div className="grid">
+                <p className="my-2 text-sm font-roboto text-darkgrey">
+                  ACTIVE:
+                  <span className="text-2xl mr-5 text-purple font-bold font-poppins">
+                    {' '}
+                    {summary.agents_active.aggregate.count}
+                  </span>
+                </p>
+
+                <p className="my-2 text-sm font-roboto text-darkgrey">
+                  NON-ACTIVE:
+                  <span className="text-2xl mr-5 text-purple font-bold font-poppins">
+                    {' '}
+                    {summary.agents_non_active.aggregate.count}
+                  </span>
+                </p>
               </div>
-              <img alt="uang" src={flower} className="w-10 h-10" />
+              <img alt="uang" src={people} className="w-10 h-10" />
             </div>
           </div>
         </div>

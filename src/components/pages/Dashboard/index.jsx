@@ -2,9 +2,10 @@ import { HomeIcon } from '@primer/octicons-react'
 
 import Greeting from '../../UI/organisms/Dashboard/Greetings'
 import Summary from '../../UI/organisms/Dashboard/Summary'
+import LatestTransaction from '../../UI/organisms/Dashboard/LatestTransaction'
 
 import { useQuery } from '@apollo/client'
-import { GET_SUMMARY } from '../../../GraphQL/Query'
+import { GET_SUMMARY, GET_TRANSACTION } from '../../../GraphQL/Query'
 
 import MainLoading from '../../UI/atoms/Spinner/MainLoading'
 import Error from '../../UI/organisms/Error'
@@ -17,8 +18,17 @@ const Dashboard = () => {
     notifyOnNetworkStatusChange: true,
   })
 
-  if (loading) return <MainLoading />
-  if (error) return <Error />
+  const {
+    data: recentTransaction,
+    loading: loadingTransaction,
+    error: errorTransaction,
+  } = useQuery(GET_TRANSACTION, {
+    variables: { limit: 5 },
+    notifyOnNetworkStatusChange: true,
+  })
+
+  if (loading || loadingTransaction) return <MainLoading />
+  if (error || errorTransaction) return <Error />
 
   return (
     <>
@@ -38,6 +48,7 @@ const Dashboard = () => {
       >
         <Greeting />
         <Summary summary={data} />
+        <LatestTransaction data={recentTransaction} />
       </div>
     </>
   )

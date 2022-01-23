@@ -1,8 +1,12 @@
 import moment from 'moment'
 
-const TableTrans = ({ data, handleClickDetail }) => {
+const LatestTransaction = ({ data }) => {
   return (
-    <div className="font-roboto">
+    <>
+      <span className="block mb-2 text-xl text-darkgrey font-bold font-roboto">
+        Latest Transaction
+      </span>
+
       <table className="w-full float-right shadow-lg font-roboto">
         <thead>
           <tr>
@@ -24,10 +28,6 @@ const TableTrans = ({ data, handleClickDetail }) => {
 
             <th className="rounded-tr-lg py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase">
               STATUS
-            </th>
-
-            <th className="rounded-tr-lg py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase">
-              ACTIONS
             </th>
           </tr>
         </thead>
@@ -94,21 +94,12 @@ const TableTrans = ({ data, handleClickDetail }) => {
                   <span className="relative">{transaction.status}</span>
                 </span>
               </td>
-
-              <td className="py-3 border-b border-gray-200 bg-white text-sm">
-                <span
-                  onClick={() => handleClickDetail(transaction.id)}
-                  className="font-semibold text-darkgrey hover:bg-lightpurple rounded-full cursor-pointer p-2"
-                >
-                  Detail
-                </span>
-              </td>
             </tr>
           ))}
         </tbody>
       </table>
-    </div>
+    </>
   )
 }
 
-export default TableTrans
+export default LatestTransaction
