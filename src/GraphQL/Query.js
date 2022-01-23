@@ -47,9 +47,39 @@ const GET_REWARD = gql`
   }
 `
 
+const GET_SUMMARY = gql`
+  query Summary {
+    agents_active: agents_aggregate(where: { active: { _eq: true } }) {
+      aggregate {
+        count
+      }
+    }
+    agents_non_active: agents_aggregate(where: { active: { _eq: false } }) {
+      aggregate {
+        count
+      }
+    }
+    products_aggregate {
+      aggregate {
+        count
+      }
+    }
+    rewards_aggregate {
+      aggregate {
+        count
+      }
+    }
+    transactions_aggregate {
+      aggregate {
+        count
+      }
+    }
+  }
+`
+
 const GET_TRANSACTION = gql`
-  query Transactions {
-    transactions {
+  query Transactions($limit: Int!) {
+    transactions(order_by: { updated_at: desc }, limit: $limit) {
       id
       type
       title
@@ -59,8 +89,16 @@ const GET_TRANSACTION = gql`
       redeem_invoice_url
       status
       created_at
+      updated_at
     }
   }
 `
 
-export { GET_ADMIN, GET_AGENT, GET_PRODUCT, GET_REWARD, GET_TRANSACTION }
+export {
+  GET_ADMIN,
+  GET_AGENT,
+  GET_PRODUCT,
+  GET_REWARD,
+  GET_SUMMARY,
+  GET_TRANSACTION,
+}

@@ -18,6 +18,7 @@ const Transactions = () => {
   document.body.style = 'background: #EEEEEE;'
 
   const { data, loading, error, refetch } = useQuery(GET_TRANSACTION, {
+    variables: { limit: 100 },
     notifyOnNetworkStatusChange: true,
   })
 
