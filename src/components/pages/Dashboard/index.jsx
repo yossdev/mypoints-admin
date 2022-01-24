@@ -41,7 +41,7 @@ const Dashboard = () => {
         style={{
           marginTop: '20px',
           marginRight: '15px',
-          width: '80%',
+          width: '85%',
           float: 'right',
           padding: '20px',
         }}

@@ -136,9 +136,10 @@ const Agents = () => {
       <div
         style={{
           marginTop: '20px',
-          width: '80%',
-          padding: '20px',
+          marginRight: '15px',
+          width: '85%',
           float: 'right',
+          padding: '20px',
         }}
       >
         <BtnAddAgent setAddAgent={setAddAgent} />
