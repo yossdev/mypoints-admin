@@ -56,7 +56,7 @@ const UserMenu = (props) => {
             <img
               alt="avatar"
               src={props.admin.img}
-              className="rounded-full w-10 h-10"
+              className="rounded-full w-10 h-10 mx-1"
             />
           ) : (
             <img alt="avatar" src={user} className="rounded-full w-10 h-10" />
@@ -68,21 +68,26 @@ const UserMenu = (props) => {
         {menu ? (
           <div className="w-100 absolute bg-white p-2 border border-purple rounded-md mt-2 drop-shadow-lg">
             <ul>
-              <li className="flex hover:bg-lightpurple cursor-pointer p-2">
+              <li>
                 <NavLink to="/profile">
-                  <div className="flex items-center">
-                    <PersonIcon size={16} fill="#5C5C5C" />
-
-                    <span className="text-sm ml-2">Profile</span>
+                  <div className="hover:bg-lightpurple cursor-pointer rounded-md p-2">
+                    <div className="flex items-center">
+                      <PersonIcon size={16} fill="#5C5C5C" />
+                      <span className="text-sm ml-2">Profile</span>
+                    </div>
                   </div>
                 </NavLink>
               </li>
 
-              <li className="flex hover:bg-lightpurple cursor-pointer p-2">
+              <hr className="my-2" />
+
+              <li>
                 <button onClick={handleSignOut}>
-                  <div className="flex items-center">
-                    <SignOutIcon size={16} fill="#5C5C5C" />
-                    <span className="text-sm ml-2">Logout</span>
+                  <div className="hover:bg-darkred bg-red cursor-pointer rounded-md">
+                    <div className="flex items-center p-2">
+                      <SignOutIcon size={16} fill="#ffffff" />
+                      <span className="text-sm ml-2 text-white">Logout</span>
+                    </div>
                   </div>
                 </button>
               </li>
