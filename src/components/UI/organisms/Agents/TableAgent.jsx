@@ -70,21 +70,16 @@ const TableAgent = ({ data, handleClickEdit }) => {
               </td>
 
               <td className="py-3 border-b border-gray-200 bg-white text-sm">
-                <span className="aria-hidden relative inline-block px-3 py-1 font-semibold leading-tight">
-                  <span
-                    aria-hidden
-                    className={
-                      agent.active
-                        ? 'inset-0 opacity-70 bg-green rounded-full'
-                        : 'inset-0 opacity-70 bg-red rounded-full'
-                    }
-                  >
-                    {agent.active ? (
-                      <span className="relative">Active</span>
-                    ) : (
-                      <span className="relative">Non-active</span>
-                    )}
-                  </span>
+                <span className="aria-hidden relative inline-block px-3 py-1 font-medium leading-tight">
+                  {agent.active ? (
+                    <span className="inset-0 opacity-70 bg-green rounded-2xl p-1.5 px-2">
+                      Active
+                    </span>
+                  ) : (
+                    <span className="inset-0 opacity-70 bg-red rounded-2xl p-1.5 px-2">
+                      Non-active
+                    </span>
+                  )}
                 </span>
               </td>
 
