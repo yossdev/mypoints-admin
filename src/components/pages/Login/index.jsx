@@ -44,6 +44,7 @@ const Login = () => {
         const accessToken = response.data.data.access_token
         dispatch(storeJwt(accessToken))
         dispatch(isAuthenticated(true))
+        navigate(from, { replace: true })
       })
       .catch(function (err) {
         setError(err)
