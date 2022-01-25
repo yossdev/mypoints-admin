@@ -23,17 +23,39 @@ const AddReward = (props) => {
           method="post"
           className="mx-auto w-full items-center justify-center my-4 rounded"
         >
-          <div>
-            <label className="block mb-2 text-sm font-bold text-purple font-roboto">
-              Nama Reward <span className="text-red">*</span>
-            </label>
-            <input
-              name="title"
-              onChange={onChangeAddReward}
-              className="w-full h-10 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded"
-              type="text"
-              required
-            />
+          <div className="flex flex-wrap -mx-3 mb-6">
+            <div className="w-full md:w-2/4 px-3 mb-6 md:mb-0">
+              <label className="block mb-2 text-sm font-bold text-purple font-roboto">
+                Nama Reward <span className="text-red">*</span>
+              </label>
+              <div className="relative">
+                <input
+                  name="title"
+                  onChange={onChangeAddReward}
+                  className="w-full h-10 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded"
+                  type="text"
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="w-full md:w-2/4 px-3">
+              <label className="block mb-2 text-sm font-bold text-purple font-roboto">
+                Kategori <span className="text-red">*</span>
+              </label>
+              <select
+                onChange={onChangeAddReward}
+                name="category"
+                className="w-full h-10 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded"
+              >
+                <option value="kategori" selected>
+                  Pilih Kategori
+                </option>
+                <option value="E_MONEY">E-Money</option>
+                <option value="CASH_OUT">Money Transfer</option>
+                <option value="DIGITAL_PRODUCT">Pulsa / Paket Data</option>
+              </select>
+            </div>
           </div>
 
           <div className="flex flex-wrap -mx-3 mb-6">
@@ -72,14 +94,13 @@ const AddReward = (props) => {
 
           <div>
             <label className="inline mb-2 text-sm font-bold text-purple font-roboto">
-              Gambar <span className="text-red">*</span>
+              Gambar
             </label>
             <input
               onChange={handleImg}
               className="pl-2 font-light text-sm"
               type="file"
               accept=".jpg, .jpeg, .png"
-              required
             />
           </div>
 

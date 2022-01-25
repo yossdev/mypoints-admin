@@ -37,6 +37,7 @@ const Reward = () => {
 
   const rewardBody = {
     admin_id: adminId,
+    category: '',
     img: '',
     points: 0,
     title: '',
@@ -82,6 +83,7 @@ const Reward = () => {
       points: reward.points,
       title: reward.title,
       value: reward.value,
+      category: reward.category,
     })
 
     setRewardID(rewardId)

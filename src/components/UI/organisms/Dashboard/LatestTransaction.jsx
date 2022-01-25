@@ -11,6 +11,10 @@ const LatestTransaction = ({ data }) => {
         <thead>
           <tr>
             <th className="py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase">
+              NAMA AGEN
+            </th>
+
+            <th className="py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase">
               TYPE
             </th>
 
@@ -35,6 +39,12 @@ const LatestTransaction = ({ data }) => {
         <tbody>
           {data.transactions.map((transaction) => (
             <tr key={transaction.id} className="text-center">
+              <td className="py-3 border-b border-gray-200 bg-white text-sm">
+                <p className="text-gray-900 whitespace-no-wrap">
+                  {transaction.agent.name}
+                </p>
+              </td>
+
               <td className="-pl-6 py-3 border-b border-gray-200 bg-white text-sm">
                 <p className="text-gray-900 whitespace-no-wrap">
                   {transaction.type === 'Debit' ? (
