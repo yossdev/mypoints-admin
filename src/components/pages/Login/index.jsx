@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { NavLink, useNavigate, useLocation } from 'react-router-dom'
 
 import logo from '../../../assets/logo.svg'
 
@@ -77,9 +77,12 @@ const Login = () => {
 
   return (
     <div className="h-screen bg-purple flex items-center font-roboto">
-      <div className="mx-auto space-y-6 bg-white shadow-md border border-white rounded-lg sm:px-10 sm:pb-8">
+      <div className="mx-auto w-100 space-y-6 bg-white shadow-md border border-white rounded-lg sm:px-10 sm:pb-5">
         <form method="post" className="space-y-6" onSubmit={handleLogin}>
-          <img className="ml-8" alt="logo" src={logo} width={175} />
+          <div className="flex items-center justify-center pt-2">
+            <img alt="logo" src={logo} width={175} />
+            <span className="mt-1 font-poppins text-purple">Admin</span>
+          </div>
 
           <h3 className="text-xl font-medium text-purple">
             Selamat Datang Para Admin
@@ -138,6 +141,24 @@ const Login = () => {
             Login
           </button>
         </form>
+
+        <hr />
+        <div className="flex justify-between my-10">
+          <NavLink to="/">
+            <span className="text-purple hover:underline hover:text-darkpurple">
+              Kembali
+            </span>
+          </NavLink>
+
+          <span>
+            <i>Belum punya akun?</i>{' '}
+            <NavLink to="/register">
+              <span className="text-purple hover:text-darkpurple hover:underline">
+                Daftar
+              </span>
+            </NavLink>
+          </span>
+        </div>
       </div>
     </div>
   )

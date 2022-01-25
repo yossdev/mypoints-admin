@@ -1,4 +1,5 @@
 import user from '../../../../assets/user.png'
+import moment from 'moment'
 
 import { useState } from 'react'
 import Pagination from './Pagination'
@@ -37,11 +38,12 @@ const TableAgent = ({ data, handleClickEdit }) => {
     <div className="grid">
       {/* Filter Option */}
       <div className="my-2">
-        <label className="inline mb-2 text-sm font-bold text-purple font-roboto">
+        <label className="inline mb-2 text-md font-bold text-purple font-roboto">
           Filter by Status:
         </label>
         <select
           onChange={handleFilterType}
+          defaultValue={'all'}
           className="w-28 ml-4 h-10 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded"
         >
           <option value="all" className="p-2">
@@ -68,6 +70,10 @@ const TableAgent = ({ data, handleClickEdit }) => {
 
               <th className="py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase">
                 POINTS
+              </th>
+
+              <th className="py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase">
+                JOIN DATE
               </th>
 
               <th className="py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase">
@@ -118,6 +124,12 @@ const TableAgent = ({ data, handleClickEdit }) => {
                     <td className="py-3 border-b border-gray-200 bg-white text-sm">
                       <p className="text-gray-900 whitespace-no-wrap">
                         {agent.points}
+                      </p>
+                    </td>
+
+                    <td className="py-3 border-b border-gray-200 bg-white text-sm">
+                      <p className="text-gray-900 whitespace-no-wrap">
+                        {moment(agent.created_at).format('LL')}
                       </p>
                     </td>
 

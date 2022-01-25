@@ -14,8 +14,7 @@ Frontend (Admin) application for MyPoints WebApp - Final Project Alterra Academy
 - [x] Create, Update: Agent
 - [x] Create, Update, Delete: Products
 - [x] Create, Update, Delete: Rewards
-- [x] Approve claim points request from Agent
-- [x] Set redeems request from Agent
+- [x] Approve/Reject claim points request from Agent
 - [x] Send Benefit w/ Xendit
 
 ## MyPoints Admin tech-stack:
@@ -26,9 +25,9 @@ Frontend (Admin) application for MyPoints WebApp - Final Project Alterra Academy
 - React-redux, @reduxjs/toolkit, redux-persist
 - Apollo/GraphQL
 - REST APIs
-- Cloudinary
-- Moment
-- React Medium Image Zoom
+- Storing Image @ Cloudinary
+- Date Format w/ Moment
+- Zoom Image w/ React Medium Image Zoom
 
 ## Architecture
 

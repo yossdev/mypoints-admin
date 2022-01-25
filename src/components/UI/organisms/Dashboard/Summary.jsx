@@ -15,7 +15,7 @@ const Summary = (props) => {
       <div className="flex justify-between">
         <div
           style={{ width: '22%' }}
-          className="inline-block rounded-lg overflow-hidden shadow-lg bg-white pt-5 pb-12"
+          className="inline-block rounded-lg overflow-hidden shadow-lg bg-white pt-5 pb-5"
         >
           <div className="mx-5">
             <p className="my-2 text-sm font-roboto text-darkgrey">

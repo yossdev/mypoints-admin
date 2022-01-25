@@ -41,7 +41,8 @@ const LatestTransaction = ({ data }) => {
             <tr key={transaction.id} className="text-center">
               <td className="py-3 border-b border-gray-200 bg-white text-sm">
                 <p className="text-gray-900 whitespace-no-wrap">
-                  {transaction.agent.name}
+                  {transaction.agent.name.charAt(0).toUpperCase() +
+                    transaction.agent.name.slice(1)}
                 </p>
               </td>
 

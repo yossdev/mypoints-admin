@@ -37,6 +37,7 @@ const Sidebar = () => {
           <Link to="/">
             <div className="h-16 w-full pl-2 flex items-center">
               <img alt="logo white" src={logoWhite} width={175} />
+              <span className="mt-1 font-poppins text-white">Admin</span>
             </div>
           </Link>
 

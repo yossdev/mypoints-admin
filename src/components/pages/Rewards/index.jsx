@@ -37,7 +37,7 @@ const Reward = () => {
 
   const rewardBody = {
     admin_id: adminId,
-    category: '',
+    category: 'E_MONEY', // defaultValue in select option in AddReward Component
     img: '',
     points: 0,
     title: '',
@@ -48,6 +48,11 @@ const Reward = () => {
   const [reqReward, setReqReward] = useState(rewardBody)
   const [errorAxios, setErrorAxios] = useState()
   const [loadingAxios, setLoadingAxios] = useState(false)
+
+  const handleCancelAdd = () => {
+    setAddReward(false)
+    setReqReward(rewardBody)
+  }
 
   const onChangeAddReward = (e) => {
     const value = e.target.value
@@ -234,7 +239,7 @@ const Reward = () => {
 
       {addReward && (
         <AddReward
-          setAddReward={setAddReward}
+          handleCancelAdd={handleCancelAdd}
           reqReward={reqReward}
           onChangeAddReward={onChangeAddReward}
           handleSubmitAddReward={handleSubmitAddReward}

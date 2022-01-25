@@ -40,7 +40,6 @@ const AddProduct = (props) => {
               name="points"
               className="w-1/3 h-10 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded"
               type="number"
-              defaultValue={1}
               min="1"
               required
             />
@@ -48,14 +47,13 @@ const AddProduct = (props) => {
 
           <div>
             <label className="block mb-2 text-sm font-bold text-purple font-roboto">
-              Gambar <span className="text-red">*</span>
+              Gambar
             </label>
             <input
               className="font-light text-sm"
               onChange={handleImg}
               type="file"
               accept=".jpg, .jpeg, .png"
-              required
             />
           </div>
 
