@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux'
 import { isAuthenticated, storeJwt } from '../../../store/slice'
 import { store } from '../../../store/store'
 
-import MainLoading from '../../UI/atoms/Spinner/MainLoading'
+import MoonLoader from 'react-spinners/MoonLoader'
 
 const api = 'https://server.mypoints.site/api/v1/admin/login'
 
@@ -44,7 +44,6 @@ const Login = () => {
         const accessToken = response.data.data.access_token
         dispatch(storeJwt(accessToken))
         dispatch(isAuthenticated(true))
-        navigate(from, { replace: true })
       })
       .catch(function (err) {
         setError(err)
@@ -73,8 +72,6 @@ const Login = () => {
       navigate(from, { replace: true })
     }
   })
-
-  if (loading) return <MainLoading />
 
   return (
     <div className="h-screen bg-purple flex items-center font-roboto">
@@ -134,13 +131,19 @@ const Login = () => {
             </div>
           )}
 
-          <button
-            type="submit"
-            onClick={() => handleLogin}
-            className="w-full text-white bg-purple hover:bg-darkpurple focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-          >
-            Login
-          </button>
+          {loading ? (
+            <div className="flex justify-center">
+              <MoonLoader size={17} color={'#5F2788'} />
+              <span className="px-2">Logging in...</span>
+            </div>
+          ) : (
+            <button
+              type="submit"
+              className="w-full text-white bg-purple hover:bg-darkpurple focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+            >
+              Login
+            </button>
+          )}
         </form>
 
         <hr />
