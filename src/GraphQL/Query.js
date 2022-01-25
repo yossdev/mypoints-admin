@@ -43,6 +43,7 @@ const GET_REWARD = gql`
       title
       points
       value
+      category
     }
   }
 `
@@ -80,6 +81,9 @@ const GET_SUMMARY = gql`
 const GET_TRANSACTION = gql`
   query Transactions($limit: Int!) {
     transactions(order_by: { updated_at: desc }, limit: $limit) {
+      agent {
+        name
+      }
       id
       type
       title

@@ -6,12 +6,14 @@ const TableTrans = ({ data, handleClickDetail }) => {
   const [allTransaction, setAllTransaction] = useState(data)
   const [start, setStart] = useState(0)
 
+  const totalRender = 10
+
   const handlePrev = () => {
-    setStart(start - 10)
+    setStart(start - totalRender)
   }
 
   const handleNext = () => {
-    setStart(start + 10)
+    setStart(start + totalRender)
   }
 
   const handleFilterType = (e) => {
@@ -34,7 +36,13 @@ const TableTrans = ({ data, handleClickDetail }) => {
     <div className="grid">
       {/* Filter Option */}
       <div className="my-2">
-        <select onChange={handleFilterType}>
+        <label className="inline mb-2 text-sm font-bold text-purple font-roboto">
+          Filter by Type:
+        </label>
+        <select
+          onChange={handleFilterType}
+          className="w-28 ml-4 h-10 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded"
+        >
           <option value="all" className="p-2">
             All
           </option>
@@ -47,6 +55,10 @@ const TableTrans = ({ data, handleClickDetail }) => {
         <table className="w-full float-right shadow-lg font-roboto">
           <thead>
             <tr>
+              <th className="py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase">
+                NAMA AGEN
+              </th>
+
               <th className="py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase">
                 TYPE
               </th>
@@ -75,9 +87,15 @@ const TableTrans = ({ data, handleClickDetail }) => {
 
           <tbody>
             {allTransaction.transactions.map((transaction, idx) => {
-              if (idx >= start && idx <= start + 10) {
+              if (idx >= start && idx <= start + totalRender) {
                 return (
                   <tr key={transaction.id} className="text-center">
+                    <td className="py-3 border-b border-gray-200 bg-white text-sm">
+                      <p className="text-gray-900 whitespace-no-wrap">
+                        {transaction.agent.name}
+                      </p>
+                    </td>
+
                     <td className="-pl-6 py-3 border-b border-gray-200 bg-white text-sm">
                       <p className="text-gray-900 whitespace-no-wrap">
                         {transaction.type === 'Debit' ? (
@@ -159,6 +177,7 @@ const TableTrans = ({ data, handleClickDetail }) => {
         next={handleNext}
         start={start}
         len={allTransaction.transactions.length}
+        totalRender={totalRender}
       />
     </div>
   )
