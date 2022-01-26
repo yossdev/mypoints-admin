@@ -21,6 +21,28 @@ const Detail = (props) => {
 
             <hr />
 
+            <div className="flex flex-wrap -mx-3 my-4">
+              <div className="w-full md:w-3/5 px-3 mb-6 md:mb-0">
+                <label className="block mb-2 text-sm font-bold text-purple font-roboto">
+                  Produk Terjual
+                </label>
+                <div className="relative">
+                  <span className="block w-full text-gray-700 ">
+                    {reqDetail.title}
+                  </span>
+                </div>
+              </div>
+
+              <div className="w-full md:w-2/5 px-3">
+                <label className="block mb-2 text-sm font-bold text-purple font-roboto">
+                  Point yang Didapat
+                </label>
+                <span className="block w-full font-bold text-green ">
+                  +{reqDetail.points}
+                </span>
+              </div>
+            </div>
+
             <div className="my-4">
               <label className="block mb-4 text-sm font-bold text-purple font-roboto">
                 Bukti Faktur
@@ -32,15 +54,6 @@ const Detail = (props) => {
                   className="max-w-28 -mt-3"
                 />
               </Zoom>
-            </div>
-
-            <div className="mb-6">
-              <label className="block mb-2 text-sm font-bold text-purple font-roboto">
-                Point yang Didapatkan
-              </label>
-              <span className="w-full h-10 px-3 py-2 mb-3 text-sm leading-tight font-bold text-green border rounded">
-                +{reqDetail.points}
-              </span>
             </div>
 
             {error ? (
@@ -126,7 +139,7 @@ const Detail = (props) => {
                   Hadiah
                 </label>
                 <div className="relative">
-                  <span className="h-10 px-3 py-2 mb-3 block w-full text-gray-700 border border-gray-200 rounded">
+                  <span className="block w-full text-gray-700 ">
                     {reqDetail.title}
                   </span>
                 </div>
@@ -136,16 +149,16 @@ const Detail = (props) => {
                 <label className="block mb-2 text-sm font-bold text-purple font-roboto">
                   Point yang Ditukar
                 </label>
-                <span className="h-10 px-3 py-2 mb-3 block w-full font-bold text-red border border-gray-200 rounded">
+                <span className="block w-full font-bold text-red ">
                   -{reqDetail.points}
                 </span>
               </div>
 
-              <div className="w-full md:w-5/5 px-3 mt-3">
+              <div className="w-full md:w-5/5 px-3 mt-5">
                 <label className="block mb-2 text-sm font-bold text-purple font-roboto">
                   Deskripsi
                 </label>
-                <span className="h-10 px-3 py-2 mb-3 block w-full text-gray-700 border border-gray-200 rounded">
+                <span className="block w-full text-gray-700 ">
                   {reqDetail.redeem_desc}
                 </span>
               </div>

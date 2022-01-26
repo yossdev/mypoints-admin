@@ -7,6 +7,7 @@ const GET_ADMIN = gql`
       img
       name
       email
+      created_at
     }
   }
 `

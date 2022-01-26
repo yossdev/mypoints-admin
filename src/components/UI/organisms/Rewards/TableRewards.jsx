@@ -61,7 +61,7 @@ const TableReward = ({ data, handleClickEdit, handleClickHapus }) => {
         <select
           onChange={handleFilterType}
           defaultValue={'all'}
-          className="w-28 ml-4 h-10 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded"
+          className="w-33 ml-4 h-10 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded"
         >
           <option value="all" className="p-2">
             All

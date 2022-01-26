@@ -6,6 +6,8 @@ import axios from 'axios'
 import useJwtDecode from '../../../../Hooks/useJwtDecode'
 import MainLoading from '../../atoms/Spinner/MainLoading'
 
+import moment from 'moment'
+
 const Profile = (props) => {
   const name =
     props.admin.name.charAt(0).toUpperCase() + props.admin.name.slice(1)
@@ -150,11 +152,23 @@ const Profile = (props) => {
           )}
         </div>
 
-        <div className="text-center px-3 pb-6 pt-2 mt-3">
-          <h3 className="text-2xl text-purple bold font-roboto">{name}</h3>
-          <h3 className="text-2xl text-purple bold font-roboto">
-            {props.admin.email}
+        <div className="px-3 pb-6 pt-2 mt-3">
+          <h3 className="text-center text-2xl text-purple bold font-roboto">
+            {name}
           </h3>
+          <div className="mt-6 ml-28">
+            <span className="text-md text-gray-400">EMAIL:</span>
+            <p className=" text-2xl text-purple bold font-roboto mb-2">
+              {' '}
+              {props.admin.email}
+            </p>
+
+            <span className="text-md text-gray-400">TANGGAL JOIN:</span>
+            <p className="text-2xl text-purple bold font-roboto mb-2">
+              {' '}
+              {moment(props.admin.created_at).format('LL')}
+            </p>
+          </div>
         </div>
 
         <div className="py-3">
