@@ -61,7 +61,7 @@ const TableReward = ({ data, handleClickEdit, handleClickHapus }) => {
         <select
           onChange={handleFilterType}
           defaultValue={'all'}
-          className="w-28 ml-4 h-10 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded"
+          className="w-33 ml-4 h-10 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded"
         >
           <option value="all" className="p-2">
             All
@@ -76,7 +76,7 @@ const TableReward = ({ data, handleClickEdit, handleClickHapus }) => {
         <table className="w-full float-right shadow-lg font-roboto">
           <thead>
             <tr>
-              <th className="py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase"></th>
+              <th className="rounded-tl-lg py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase"></th>
 
               <th className="py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase">
                 HADIAH

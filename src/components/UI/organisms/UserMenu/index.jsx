@@ -65,7 +65,7 @@ const UserMenu = (props) => {
       </div>
 
       {menu ? (
-        <div className="w-100 absolute bg-white p-2 border border-purple rounded-md mt-2 drop-shadow-lg">
+        <div className="absolute bg-white p-2 border border-purple rounded-md mt-2 drop-shadow-lg">
           <ul>
             <li>
               <NavLink to="/profile">
