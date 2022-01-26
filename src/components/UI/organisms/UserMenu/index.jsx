@@ -46,56 +46,54 @@ const UserMenu = (props) => {
   }
 
   return (
-    <>
-      <div className="float-right mr-7 mt-7 font-roboto-300">
-        <div
-          onClick={handleDropdown}
-          className="flex ml-10 cursor-pointer items-center"
-        >
-          {props.admin.img !== '' ? (
-            <img
-              alt="avatar"
-              src={props.admin.img}
-              className="rounded-full w-10 h-10 mx-1"
-            />
-          ) : (
-            <img alt="avatar" src={user} className="rounded-full w-10 h-10" />
-          )}
+    <div className="float-right mr-7 mt-7 font-roboto-300">
+      <div
+        onClick={handleDropdown}
+        className="flex ml-10 cursor-pointer items-center"
+      >
+        {props.admin.img !== '' ? (
+          <img
+            alt="avatar"
+            src={props.admin.img}
+            className="rounded-full w-10 h-10 mx-1"
+          />
+        ) : (
+          <img alt="avatar" src={user} className="rounded-full w-10 h-10" />
+        )}
 
-          <ChevronDownIcon size={20} fill="#5C5C5C" />
-        </div>
-
-        {menu ? (
-          <div className="w-100 absolute bg-white p-2 border border-purple rounded-md mt-2 drop-shadow-lg">
-            <ul>
-              <li>
-                <NavLink to="/profile">
-                  <div className="hover:bg-lightpurple cursor-pointer rounded-md p-2">
-                    <div className="flex items-center">
-                      <PersonIcon size={16} fill="#5C5C5C" />
-                      <span className="text-sm ml-2">Profile</span>
-                    </div>
-                  </div>
-                </NavLink>
-              </li>
-
-              <hr className="my-2" />
-
-              <li>
-                <button onClick={handleSignOut}>
-                  <div className="hover:bg-darkred bg-red cursor-pointer rounded-md">
-                    <div className="flex items-center p-2">
-                      <SignOutIcon size={16} fill="#ffffff" />
-                      <span className="text-sm ml-2 text-white">Logout</span>
-                    </div>
-                  </div>
-                </button>
-              </li>
-            </ul>
-          </div>
-        ) : null}
+        <ChevronDownIcon size={20} fill="#5C5C5C" />
       </div>
-    </>
+
+      {menu ? (
+        <div className="w-100 absolute bg-white p-2 border border-purple rounded-md mt-2 drop-shadow-lg">
+          <ul>
+            <li>
+              <NavLink to="/profile">
+                <div className="hover:bg-lightpurple cursor-pointer rounded-md p-2">
+                  <div className="flex items-center">
+                    <PersonIcon size={16} fill="#5C5C5C" />
+                    <span className="text-sm ml-2">Profile</span>
+                  </div>
+                </div>
+              </NavLink>
+            </li>
+
+            <hr className="my-2" />
+
+            <li>
+              <button onClick={handleSignOut}>
+                <div className="hover:bg-darkred bg-red cursor-pointer rounded-md">
+                  <div className="flex items-center p-2">
+                    <SignOutIcon size={16} fill="#ffffff" />
+                    <span className="text-sm ml-2 text-white">Logout</span>
+                  </div>
+                </div>
+              </button>
+            </li>
+          </ul>
+        </div>
+      ) : null}
+    </div>
   )
 }
 

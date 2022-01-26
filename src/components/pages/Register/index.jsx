@@ -3,7 +3,7 @@ import MainLoading from '../../UI/atoms/Spinner/MainLoading'
 
 import axios from 'axios'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 const baseURL = 'https://server.mypoints.site/api/v1/admin/signup'
 
@@ -43,9 +43,6 @@ const Register = () => {
     setLoading(true)
     axios
       .post(baseURL, reqBody)
-      .then(function (response) {
-        // dispatch redux untuk simpan jwt access token
-      })
       .catch(function (err) {
         setError(err)
       })
@@ -59,9 +56,12 @@ const Register = () => {
 
   return (
     <div className="h-screen bg-purple flex items-center font-roboto">
-      <div className="mx-auto space-y-6 bg-white shadow-md border border-white rounded-lg sm:px-10 sm:pb-8">
-        <form method="post" className="space-y-4" onSubmit={handleRegister}>
-          <img className="ml-8" alt="logo" src={logo} width={175} />
+      <div className="mx-auto w-1/3 space-y-6 bg-white shadow-md border border-white rounded-lg sm:px-10 sm:pb-5">
+        <form method="post" className="space-y-6" onSubmit={handleRegister}>
+          <div className="flex items-center justify-center pt-2">
+            <img alt="logo" src={logo} width={175} />
+            <span className="mt-1 font-poppins text-purple">Admin</span>
+          </div>
 
           <h3 className="text-xl font-medium text-purple">
             Silahkan Daftarkan Akun Anda
@@ -77,10 +77,9 @@ const Register = () => {
             <input
               type="text"
               name="name"
-              id="username"
               className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5"
-              placeholder="username"
               onChange={handleChange}
+              placeholder="Name"
               required
             />
           </div>
@@ -95,9 +94,8 @@ const Register = () => {
             <input
               type="email"
               name="email"
-              id="email"
               className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5"
-              placeholder="name@company.com"
+              placeholder="name@mail.com"
               onChange={handleChange}
               required
             />
@@ -114,7 +112,6 @@ const Register = () => {
             <input
               type="password"
               name="password"
-              id="password"
               placeholder="********"
               onChange={handleChange}
               className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5"
@@ -133,7 +130,6 @@ const Register = () => {
             <input
               type="password"
               name="confirmPassword"
-              id="password"
               placeholder="********"
               onChange={handleChange}
               className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5"
@@ -161,6 +157,23 @@ const Register = () => {
             Register
           </button>
         </form>
+
+        <hr />
+        <div className="flex justify-between my-10">
+          <NavLink to="/">
+            <span className="text-purple hover:text-darkpurple hover:underline">
+              Kembali
+            </span>
+          </NavLink>
+          <span>
+            <i>Sudah punya akun?</i>{' '}
+            <NavLink to="/login">
+              <span className="text-purple hover:text-darkpurple hover:underline">
+                Login
+              </span>
+            </NavLink>
+          </span>
+        </div>
       </div>
     </div>
   )

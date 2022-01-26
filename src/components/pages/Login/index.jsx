@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { NavLink, useNavigate, useLocation } from 'react-router-dom'
 
 import logo from '../../../assets/logo.svg'
 
@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux'
 import { isAuthenticated, storeJwt } from '../../../store/slice'
 import { store } from '../../../store/store'
 
-import MainLoading from '../../UI/atoms/Spinner/MainLoading'
+import MoonLoader from 'react-spinners/MoonLoader'
 
 const api = 'https://server.mypoints.site/api/v1/admin/login'
 
@@ -73,13 +73,14 @@ const Login = () => {
     }
   })
 
-  if (loading) return <MainLoading />
-
   return (
     <div className="h-screen bg-purple flex items-center font-roboto">
-      <div className="mx-auto space-y-6 bg-white shadow-md border border-white rounded-lg sm:px-10 sm:pb-8">
+      <div className="mx-auto w-100 space-y-6 bg-white shadow-md border border-white rounded-lg sm:px-10 sm:pb-5">
         <form method="post" className="space-y-6" onSubmit={handleLogin}>
-          <img className="ml-8" alt="logo" src={logo} width={175} />
+          <div className="flex items-center justify-center pt-2">
+            <img alt="logo" src={logo} width={175} />
+            <span className="mt-1 font-poppins text-purple">Admin</span>
+          </div>
 
           <h3 className="text-xl font-medium text-purple">
             Selamat Datang Para Admin
@@ -130,14 +131,38 @@ const Login = () => {
             </div>
           )}
 
-          <button
-            type="submit"
-            onClick={() => handleLogin}
-            className="w-full text-white bg-purple hover:bg-darkpurple focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-          >
-            Login
-          </button>
+          {loading ? (
+            <div className="flex justify-center">
+              <MoonLoader size={17} color={'#5F2788'} />
+              <span className="px-2">Logging in...</span>
+            </div>
+          ) : (
+            <button
+              type="submit"
+              className="w-full text-white bg-purple hover:bg-darkpurple focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+            >
+              Login
+            </button>
+          )}
         </form>
+
+        <hr />
+        <div className="flex justify-between my-10">
+          <NavLink to="/">
+            <span className="text-purple hover:underline hover:text-darkpurple">
+              Kembali
+            </span>
+          </NavLink>
+
+          <span>
+            <i>Belum punya akun?</i>{' '}
+            <NavLink to="/register">
+              <span className="text-purple hover:text-darkpurple hover:underline">
+                Daftar
+              </span>
+            </NavLink>
+          </span>
+        </div>
       </div>
     </div>
   )

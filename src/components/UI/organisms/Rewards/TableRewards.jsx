@@ -17,6 +17,19 @@ const TableReward = ({ data, handleClickEdit, handleClickHapus }) => {
     setStart(start + totalRender)
   }
 
+  const handleCategory = (args) => {
+    switch (args) {
+      case 'E_MONEY':
+        return 'E-Money'
+      case 'CASH_OUT':
+        return 'Cash Out'
+      case 'DIGITAL_PRODUCT':
+        return 'Pulsa/Paket Data'
+      default:
+        break
+    }
+  }
+
   const handleFilterType = (e) => {
     switch (e.target.value) {
       case 'E-Money':
@@ -43,10 +56,11 @@ const TableReward = ({ data, handleClickEdit, handleClickHapus }) => {
     <div className="grid">
       <div className="inline my-2">
         <label className="inline mb-2 text-md font-bold text-purple font-roboto">
-          Filter by Type:
+          Filter by Category:
         </label>
         <select
           onChange={handleFilterType}
+          defaultValue={'all'}
           className="w-28 ml-4 h-10 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded"
         >
           <option value="all" className="p-2">
@@ -66,6 +80,10 @@ const TableReward = ({ data, handleClickEdit, handleClickHapus }) => {
 
               <th className="py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase">
                 HADIAH
+              </th>
+
+              <th className="py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase">
+                KATEGORI
               </th>
 
               <th className="py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase">
@@ -109,9 +127,14 @@ const TableReward = ({ data, handleClickEdit, handleClickHapus }) => {
                       </p>
                     </td>
 
+                    <td className="-pl-6 py-3 border-b border-gray-200 bg-white text-sm">
+                      <p className="text-gray-900 whitespace-no-wrap">
+                        {handleCategory(reward.category)}
+                      </p>
+                    </td>
+
                     <td className="py-3 border-b border-gray-200 bg-white text-sm">
                       <p className="text-gray-900 whitespace-no-wrap">
-                        {/* TODO value ga mau muncul */}
                         {reward.value}
                       </p>
                     </td>

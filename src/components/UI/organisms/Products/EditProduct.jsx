@@ -48,7 +48,6 @@ const EditProduct = (props) => {
               name="points"
               className="w-1/3 h-10 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded"
               type="number"
-              defaultValue={1}
               min="1"
               required
             />

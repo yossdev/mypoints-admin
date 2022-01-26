@@ -1,6 +1,6 @@
 const AddReward = (props) => {
   const {
-    setAddReward,
+    handleCancelAdd,
     onChangeAddReward,
     handleSubmitAddReward,
     handleImg,
@@ -44,13 +44,11 @@ const AddReward = (props) => {
                 Kategori <span className="text-red">*</span>
               </label>
               <select
-                onChange={onChangeAddReward}
+                onChange={(e) => onChangeAddReward(e, 'E_MONEY')}
+                defaultValue="E_MONEY"
                 name="category"
                 className="w-full h-10 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded"
               >
-                <option value="kategori" selected>
-                  Pilih Kategori
-                </option>
                 <option value="E_MONEY">E-Money</option>
                 <option value="CASH_OUT">Money Transfer</option>
                 <option value="DIGITAL_PRODUCT">Pulsa / Paket Data</option>
@@ -69,7 +67,6 @@ const AddReward = (props) => {
                   onChange={onChangeAddReward}
                   className="h-10 appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   type="number"
-                  defaultValue={1}
                   min="1"
                   required
                 />
@@ -85,7 +82,6 @@ const AddReward = (props) => {
                 onChange={onChangeAddReward}
                 className="h-10 appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 type="number"
-                defaultValue={1}
                 min="1"
                 required
               />
@@ -121,7 +117,7 @@ const AddReward = (props) => {
             </button>
 
             <button
-              onClick={() => setAddReward(false)}
+              onClick={handleCancelAdd}
               className="bg-white hover:bg-lightpurple text-red text-sm font-roboto py-3 px-4 rounded-md"
             >
               Batal

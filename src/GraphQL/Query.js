@@ -13,20 +13,21 @@ const GET_ADMIN = gql`
 
 const GET_AGENT = gql`
   query Agent {
-    agents {
+    agents(distinct_on: created_at, order_by: { created_at: desc }) {
       id
       name
       email
       img
       points
       active
+      created_at
     }
   }
 `
 
 const GET_PRODUCT = gql`
   query Products {
-    products {
+    products(distinct_on: created_at, order_by: { created_at: desc }) {
       id
       img
       title
@@ -37,7 +38,7 @@ const GET_PRODUCT = gql`
 
 const GET_REWARD = gql`
   query Rewards {
-    rewards {
+    rewards(distinct_on: created_at, order_by: { created_at: desc }) {
       id
       img
       title
