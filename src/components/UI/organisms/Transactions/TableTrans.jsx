@@ -56,7 +56,7 @@ const TableTrans = ({ data, handleClickDetail }) => {
         <table className="w-full float-right shadow-lg font-roboto">
           <thead>
             <tr>
-              <th className="py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase">
+              <th className="rounded-tl-lg py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase">
                 NAMA AGEN
               </th>
 
@@ -68,11 +68,11 @@ const TableTrans = ({ data, handleClickDetail }) => {
                 TITLE
               </th>
 
-              <th className="rounded-tr-lg py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase">
+              <th className="py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase">
                 POINTS
               </th>
 
-              <th className="rounded-tr-lg py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase">
+              <th className="py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase">
                 DATE
               </th>
 

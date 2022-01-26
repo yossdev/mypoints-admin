@@ -76,7 +76,7 @@ const TableReward = ({ data, handleClickEdit, handleClickHapus }) => {
         <table className="w-full float-right shadow-lg font-roboto">
           <thead>
             <tr>
-              <th className="py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase"></th>
+              <th className="rounded-tl-lg py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase"></th>
 
               <th className="py-3 border-b-2 border-gray-200 bg-white text-xs font-semibold text-purple uppercase">
                 HADIAH
